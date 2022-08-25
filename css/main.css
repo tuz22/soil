@@ -151,3 +151,43 @@ table.diary {
   text-align: left;
   word-wrap: break-word;
 }
+footer {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  /* background: white; */
+}
+.btn-menu {
+  width: 60px;
+  height: 60px;
+  background: #204630;
+  border-radius: 50%;
+
+}
+.bar {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.bar1 {
+  transform: translate(12px, 28px);
+}
+.bar2 {
+  transform: rotate(90deg) translate(17px, -12px) ;
+}
+.change .bar1 {
+  transform: rotate(-45deg) translate(-11px, 29px);
+}
+.change .bar2 {
+  transform: rotate(45deg) translate(21px, 2px);
+}
+.btn-menu .write {
+  position: relative;
+  bottom: 8rem;
+}
+.btn-menu .setting {
+  position: relative;
+  bottom: 19rem;
+}
