@@ -82,6 +82,7 @@ header h1{
   height: 40px;
   padding: 1rem;
   border-top: 1px solid black;
+  background: #f3f2f0;
 }
 .nav-item {
   justify-content: space-around;
@@ -169,6 +170,9 @@ table.diary-write-header {
   padding: 0 1rem 1rem 0;
   align-items: center;
 }
+.diary-write-header thead .list {
+  text-align: right;
+}
 .diary-write-header thead :not(.list) {
   padding-right: 0;
 }
@@ -214,7 +218,7 @@ table.diary-write-header {
 .diary-write tbody .content {
   position: fixed;
   width: -webkit-fill-available;
-  top: 16em;
+  top: 18em;
   bottom: 40px;
   overflow-y: scroll;
   background: white;
@@ -254,7 +258,6 @@ footer {
   position: fixed;
   bottom: 1rem;
   right: 1.5rem;
-  /* background: white; */
 }
 .btn-menu {
   position: relative;
