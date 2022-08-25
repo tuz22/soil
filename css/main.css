@@ -66,9 +66,10 @@ header h1{
   top: 0;
   left: 0;
   width: 100%;
+  min-width: 240px;
   height: 40px;
   line-height: 40px;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   text-align: center;
   border-bottom: 2px solid #204630;
 }
@@ -86,7 +87,7 @@ header h1{
   justify-content: space-around;
   margin: 0 auto;
 }
-table.board, table.diary, table.diary-write {
+table {
   position: relative;
   border: 1px solid black;
   border-collapse: collapse;
@@ -102,7 +103,7 @@ table.board, table.diary, table.diary-write {
   padding: 1rem;
   padding-bottom: 0;
 }
-.board-date {
+.date {
   text-align: right;
 }
 .board tbody td {
@@ -156,32 +157,33 @@ table.diary {
   text-align: left;
   word-wrap: break-word;
 }
-table.diary-write {
+table.diary-write-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  padding-bottom: 0;
 }
-.diary-write thead td{
-  padding: 0 1rem 1rem 1rem;
+.diary-write-header thead td {
+  padding: 0 1rem 1rem 0;
   align-items: center;
 }
-.diary-write thead span {
-  padding-left: 1rem;
+.diary-write-header thead :not(.list) {
+  padding-right: 0;
 }
-.diary-write tbody {
+.diary-write-header tbody {
   padding: 1rem;
   width: 100%;
   overflow: hidden;
 }
-.diary-write tbody h3 {
+.diary-write-header tbody h3 {
   font-weight: 500;
 }
-.diary-write tbody td {
+.diary-write-header tbody td {
   padding: 0.3rem 0;
 }
-.diary-write tbody .content {
+.diary-write-header tbody .content {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -193,15 +195,64 @@ table.diary-write {
   text-align: left;
   word-wrap: break-word;
 }
-.diary-write input {
+.diary-write-header select {
   border: 0;
-  border-bottom: 1.3px solid black;
-  padding: 0 1rem;
-
+  /* padding: 0 1rem; */
 }
+/* table.diary-write {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  padding-bottom: 0;
+} */
+.diary-write thead {
+  padding: 1rem;
+  padding-bottom: 0;
+}
+.diary-write tbody .content {
+  position: fixed;
+  width: -webkit-fill-available;
+  top: 16em;
+  bottom: 40px;
+  overflow-y: scroll;
+  background: white;
+}
+.diary-write tbody td {
+  width: 100%;
+  padding: 1rem;
+  vertical-align: baseline;
+}
+.diary-write tfoot td {
+  padding: 1rem;
+  padding-right: 0;
+}
+.diary-write tfoot span {
+  padding: 0.5rem;
+}
+
+
+
+/* .diary-write thead td{
+  padding: 0 1rem 1rem 1rem;
+  align-items: center;
+}
+.diary-write tbody {
+  padding: 1rem;
+  width: 100%;
+  overflow: hidden;
+}
+.diary-write tbody h3 {
+  font-weight: 500;
+}
+.diary-write tbody td {
+  padding: 0.3rem 0;
+} */
+
 footer {
   position: fixed;
-  bottom: 2rem;
+  bottom: 1rem;
   right: 1.5rem;
   /* background: white; */
 }

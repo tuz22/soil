@@ -14,29 +14,35 @@
     <header>
       <h1><a href=javascript:history.back()><div class="history-back"><</div></a></h1>
     </header>
-    <table class="diary-write">
+    <table class="diary-write-header">
       <thead>
         <tr>
           <td class="list">구매항목:</td><!-- 글번호 -->
-          <td>Ssam ratione, aliquam atque voluptas quidem.</td>
+          <td>aliquam atque voluptas quidem.</td>
         </tr>
         <td class="list">카테고리:</td>
-        <td><button onclick="openCategories('categories.html')"><img class="menu-icon" src="img/categories-64.png" alt=""></button>
-        <input type="text" id="answer" readonly></td>
+        <td>
+          <!-- <button onclick="openCategories('categories.html')"><img class="menu-icon" src="img/categories-64.png" alt=""></button> -->
+          <!-- <input type="text" id="answer" readonly> -->
+          <select name="categories" id="">
+            <option value="0">카테고리를 선택하세요.</option>
+            <option value="1">카테고리1</option>
+            <option value="2">카테고리2</option>
+            <option value="3">카테고리3</option>
+            <option value="4">카테고리4</option>
+          </select>
+        </td>
       </thead>
-      <!-- <tbody>
+    </table>
+    <table class="diary-write">
+      <tbody>
+        <td class="date">2022.08.25</td>
         <tr>
-          <td><h3>글제목</h3></td>
-        </tr>
-        <tr>
-          <td class="content"></td>
+          <td class="content">무엇이든 기록을 해보자.</td>
         </tr>
       </tbody>
       <tfoot>
-        <tr>
-          <td class="diary-date">2022.08.21</td>
-        </tr>
-      </tfoot> -->
+      </tfoot>
     </table>
     <footer>
       <nav class="nav-categories">
