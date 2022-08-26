@@ -85,8 +85,12 @@ header h1{
   background: #f3f2f0;
 }
 .nav-item {
-  justify-content: space-around;
+  display: flex;
   margin: 0 auto;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 table {
   position: relative;
@@ -223,6 +227,12 @@ table.diary-write-header {
   overflow-y: scroll;
   background: white;
 }
+.diary-write textarea {
+  width: 98%;
+  height: 90%;
+  border: none;
+  resize: none;
+}
 .diary-write tbody td {
   width: 100%;
   padding: 1rem;
@@ -258,6 +268,11 @@ footer {
   position: fixed;
   bottom: 1rem;
   right: 1.5rem;
+  margin-top: 1rem;
+}
+div.margin {
+  padding: 1rem;
+  margin-bottom: 6rem;
 }
 .btn-menu {
   position: relative;
@@ -267,7 +282,7 @@ footer {
   margin: 10px;
   background: #204630;
   border-radius: 50%;
-  box-shadow: 1px 1px 1px 1px rgb(84, 84, 84);
+  box-shadow: 1px 3px 5px 1px rgb(183, 183, 183);
 }
 .bar {
   width: 35px;
