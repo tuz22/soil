@@ -245,9 +245,6 @@ table.diary-write-header {
 .diary-write tfoot span {
   padding: 0.5rem;
 }
-
-
-
 /* .diary-write thead td{
   padding: 0 1rem 1rem 1rem;
   align-items: center;
@@ -263,7 +260,78 @@ table.diary-write-header {
 .diary-write tbody td {
   padding: 0.3rem 0;
 } */
-
+table.board-write-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+.board-write-header thead td {
+  padding: 0 1rem 1rem 0;
+  align-items: center;
+}
+.board-write-header thead .list {
+  text-align: right;
+}
+.board-write-header thead :not(.list) {
+  padding-right: 0;
+}
+.board-write-header select {
+  border: 0;
+  /* padding: 0 1rem; */
+}
+.board-write tbody .content {
+  position: fixed;
+  width: -webkit-fill-available;
+  top: 13em;
+  bottom: 40px;
+  overflow-y: scroll;
+  background: white;
+}
+.board-write textarea {
+  width: 98%;
+  height: 90%;
+  border: none;
+  resize: none;
+}
+.board-write tbody td {
+  width: 100%;
+  padding: 1rem;
+  vertical-align: baseline;
+}
+.setting img{
+  width: 2rem;
+}
+.setting tr {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1em solid #f3f2f0;
+  font-size: 1.5rem;
+}
+.setting td {
+  padding: 0.5rem;
+}
+.set-title {
+  width: 70%;
+}
+.set-icon {
+  width: 36px;
+  text-align: center;
+}
+.setting .btn-set {
+  display: flex;
+}
+.setting .btn-set div {
+  padding: 0 1rem;
+}
+.setting .btn-count {
+  border: none;
+  background: none;
+  font-weight: bold;
+}
 footer {
   position: fixed;
   bottom: 1rem;
@@ -325,4 +393,56 @@ div.margin {
   text-align: left;
   margin-left: 20px;
   line-height: 40px;
+}
+
+
+.wrapper {
+  text-align: center;
+  line-height: 100%;
+}
+#switch {
+  position: absolute;
+  /* hidden */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.switch_label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 58px;
+  height: 23px;
+  background: #fff;
+  border: 2px solid #204630;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.switch_label:hover {
+  background: #efefef;
+}
+.onf_btn {
+  position: absolute;
+  top: -0.5px;
+  left: 1px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #204630;
+  transition: 0.2s;
+}
+/* checking style */
+#switch:checked+.switch_label {
+  background: #204630;
+  border: 2px solid #204630;
+}
+#switch:checked+.switch_label:hover {
+  background: #204630;
+}
+/* move */
+#switch:checked+.switch_label .onf_btn {
+  left: 34px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
 }

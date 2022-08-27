@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- 일기 목록 -->
+  <div class="container">
+    <header>
+      <h1><a href=javascript:history.back()><div class="history-back">< 설정</div></a></h1>
+    </header>
+    <table class="setting" border="1">
+      <tr>
+        <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+        <td>|</td>
+        <td class="set-title">사용자</td>
+        <td>2022.08.27</td>
+      </tr>
+      <tr>
+        <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+        <td>|</td>
+        <td class="set-title">폰트 설정</td>
+        <td class="btn-set">
+          <input type="button" class="btn-count" onclick="fontStyle('minus')" value="<"/>
+          <div id='btnFontChange'>Gaegu</div>
+          <input type="button" class="btn-count" onclick="fontStyle('plus')" value=">"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+        <td>|</td>
+        <td class="set-title">글자 크기</td>
+        <td class="btn-set">
+          <input type="button" class="btn-count" onclick="count('minus')" value="-"/>
+          <div id='btnFontSize'>12</div>
+          <input type="button" class="btn-count" onclick="count('plus')" value="+"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+        <td>|</td>
+        <td class="set-title">다크 모드</td>
+        <td>
+          <div class="wrapper">
+            <input type="checkbox" id="switch">
+            <label for="switch" class="switch_label">
+              <span class="onf_btn"></span>
+            </label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+        <td>|</td>
+        <td class="set-title">잠금 설정</td>
+        <td>
+          <div class="wrapper">
+            <input type="checkbox" id="switch">
+            <label for="switch" class="switch_label">
+              <span class="onf_btn"></span>
+            </label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+        <td>|</td>
+        <td class="set-title">백업 / 복구</td>
+      </tr>
+      <tr>
+        <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+        <td>|</td>
+        <td class="set-title">내보내기</td>
+      </tr>
+      <tr>
+        <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+        <td>|</td>
+        <td class="set-title">의견 보내기</td>
+      </tr>
+      <tr>
+        <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+        <td>|</td>
+        <td class="set-title">앱 평가하기</td>
+      </tr>
+    </table>
+    <footer>
+      <nav class="nav-categories">
+        <a href="main.html" class="nav-item"><img class="menu-icon" src="img/money-box-64.png" alt="diary">소비기록</a>
+        <a href="board.html" class="nav-item"><img class="menu-icon" src="img/chat-64.png" alt="board">자유게시판</a>
+        <a href="#" class="nav-item"><img class="menu-icon" src="img/settings-64.png" alt="setting">설정</a>
+      </nav>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
