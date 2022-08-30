@@ -17,74 +17,74 @@
     <table class="setting" border="1">
       <tr>
         <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-        <td>|</td>
+        <td class="set-tab">|</td>
         <td class="set-title">사용자</td>
         <td>2022.08.27</td>
       </tr>
       <tr>
         <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-        <td>|</td>
+        <td class="set-tab">|</td>
         <td class="set-title">폰트 설정</td>
-        <td class="btn-set">
-          <input type="button" class="btn-count" onclick="fontStyle('minus')" value="<"/>
-          <div id='btnFontChange'>Gaegu</div>
-          <input type="button" class="btn-count" onclick="fontStyle('plus')" value=">"/>
+        <td class="set-switch">
+          <div class="btn-set">
+            <input type="button" class="btn-count" onclick="fontStyle('minus')" value="<"/>
+            <div id='btnFontChange'>Gaegu</div>
+            <input type="button" class="btn-count" onclick="fontStyle('plus')" value=">"/>
+          </div>
         </td>
       </tr>
       <tr>
         <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-        <td>|</td>
+        <td class="set-tab">|</td>
         <td class="set-title">글자 크기</td>
-        <td class="btn-set">
-          <input type="button" class="btn-count" onclick="count('minus')" value="-"/>
-          <div id='btnFontSize'>12</div>
-          <input type="button" class="btn-count" onclick="count('plus')" value="+"/>
+        <td class="set-switch">
+          <div class="btn-set">
+            <input type="button" class="btn-count" onclick="count('minus')" value="-"/>
+            <div id='btnFontSize'>12</div>
+            <input type="button" class="btn-count" onclick="count('plus')" value="+"/>
+          </div>
         </td>
       </tr>
       <tr>
         <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-        <td>|</td>
+        <td class="set-tab">|</td>
         <td class="set-title">다크 모드</td>
-        <td>
-          <div class="wrapper">
-            <input type="checkbox" id="switch">
-            <label for="switch" class="switch_label">
-              <span class="onf_btn"></span>
-            </label>
-          </div>
+        <td class="set-switch">
+          <input type="checkbox" id="checkDark">
+          <label for="checkDark" class="check-dark">
+            <div class="check-dark-off"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-        <td>|</td>
+        <td class="set-tab">|</td>
         <td class="set-title">잠금 설정</td>
-        <td>
-          <div class="wrapper">
-            <input type="checkbox" id="switch">
-            <label for="switch" class="switch_label">
-              <span class="onf_btn"></span>
-            </label>
-          </div>
+        <td class="set-switch">
+          <input type="checkbox" id="checkLock">
+          <label for="checkLock" class="check-lock">
+            <div class="check-lock-off"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-        <td>|</td>
+        <td class="set-tab">|</td>
         <td class="set-title">백업 / 복구</td>
       </tr>
       <tr>
         <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-        <td>|</td>
+        <td class="set-tab">|</td>
         <td class="set-title">내보내기</td>
       </tr>
       <tr>
         <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-        <td>|</td>
+        <td class="set-tab">|</td>
         <td class="set-title">의견 보내기</td>
       </tr>
       <tr>
         <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-        <td>|</td>
+        <td class="set-tab">|</td>
         <td class="set-title">앱 평가하기</td>
       </tr>
     </table>

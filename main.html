@@ -65,5 +65,53 @@
       <button class="btn-menu write" onclick="location.href='diary_write.html';"><img class="write-icon" src="img/edit-52.png" alt="write"></button>
     </footer>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      $.ajax({
+        type: "GET",
+        url: "https://d15e-175-196-46-15.jp.ngrok.io/diaries/5",
+        // data: { },
+        dataType: "jsonp",
+        cors: true,
+        contentType: "application/json",
+        secure: true,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Origin'
+        },
+        success: function(data) {
+          
+          if (data.length > 0) {
+            var td = $("<table/>");
+
+            for (var i in data) {
+
+              var $category = data[i].category;
+              var $title = data[i].title;
+              var $content = data[i].content;
+              var $date = data[i].date;
+              var $price = data[i].price;
+              
+              var row = $("<tr/>").append(
+                $("<td/>").text($id),
+                $("<td/>").text($title),
+                $("<td/>").text($content),
+                $("<td/>").text($date),
+                $("<td/>").text($price),
+              );
+              td.append(row);
+            }
+          }
+          $(".wrap").append(td);
+          console.log(data);
+        },
+        error: function(error){
+          console.log(error);
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
