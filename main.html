@@ -47,7 +47,7 @@
           <td><h3>글제목</h3></td>
         </tr>
         <tr>
-          <td class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit eos maxime dolorem accusamus possimus quas aliquam quos minus, illo labore eum pariatur rem minima doloremque ad? Hic ad libero sunt sit aspernatur sequi, et corrupti consectetur at facilis, ratione corporis quaerat! Consectetur, possimus est eveniet aliquid ipsum necessitatibus, dolore aperiam voluptatibus quod error odit officiis quaerat voluptatem fugiat eius et ipsa deserunt natus dolores architecto. Quibusdam doloremque explicabo molestias alias tempora maiores assumenda tempore beatae eum veniam, modi amet libero corrupti cum hic architecto iure! Fugit sapiente facere provident cupiditate dolorem corporis natus eos ipsam ratione, aliquam atque voluptas quidem.</td>
+          <td class="content">Lorem ipsum, </td>
         </tr>
       </tbody>
       <tfoot>
@@ -70,8 +70,8 @@
     $(document).ready(function(){
       $.ajax({
         type: "GET",
-        url: "https://cors.bridged.cc/https://a997-218-39-206-107.jp.ngrok.io/diaries/5",
-        dataType: "text",
+        url: "http://3.39.198.111:8090/diaries/5",
+        dataType: "json",
         cors: true,
         contentType: "application/json",
         secure: true,
@@ -80,30 +80,12 @@
 
         },
         success: function(data) {
-          console.log(data);
-          
-          // if (data.length > 0) {
-          //   var td = $("<table/>");
+          console.log(JSON.stringify(data));
 
-          //   for (var i in data) {
-
-          //     var $category = data[i].category;
-          //     var $title = data[i].title;
-          //     var $content = data[i].content;
-          //     var $date = data[i].date;
-          //     var $price = data[i].price;
-              
-          //     var row = $("<tr/>").append(
-          //       $("<td/>").text($id),
-          //       $("<td/>").text($title),
-          //       $("<td/>").text($content),
-          //       $("<td/>").text($date),
-          //       $("<td/>").text($price),
-          //     );
-          //     td.append(row);
-          //   }
-          // }
-          // $(".wrap").append(td);
+          $.each(data, function(item) {
+					$(".content").append(item + " ");
+					
+				});
         },
         error: function(error){
           console.log(error);
