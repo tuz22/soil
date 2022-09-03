@@ -66,14 +66,14 @@ function fontStyle(type) {
 
 // 로그인 체크
 function loginCheck(){
-  let userId = document.getElementsByName('userId').values();
-  let userPw = document.getElementsByName('userPw').values();
+  let userId = document.getElementById('userId').value;
+  let userPw = document.getElementById('userPw').value;
 
   let loginData = {"userId": userId, "userPw": userPw};
-
+  console.log(loginData);
   $.ajax({
     type: "POST",
-    url: "",
+    url: "http://3.39.198.111:8090/login",
     contentType: "application/json",
     dataType: "json",
     data: JSON.stringify(loginData),
@@ -92,4 +92,9 @@ function loginCheck(){
       console.log(error);
     }
   })
+}
+
+function inputValueChange(){
+  var userId = document.getElementById('userId').value;
+  console.log(userId);
 }

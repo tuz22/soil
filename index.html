@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/default.css">
   <link rel="stylesheet" href="css/main.css">
+  
 </head>
 <body>
   <div class="container">
@@ -17,11 +18,12 @@
           <div class="btn-guest-start"><a href="main.html">게스트로 시작하기</a></div> 
           <button class="btn btn-user-start" onclick="location.href='main.html'">시작하기</button>
         </div>
-        <input type="text" name="userId" placeholder="아이디">
-        <input type="password" name="userPw" placeholder="비밀번호">
+        <input type="text" id="userId" value="" onchange="inputValueChange()" placeholder="아이디">
+        <input type="password" id="userPw" value="" placeholder="비밀번호">
         <button onclick="loginCheck();">로그인</button>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
