@@ -69,7 +69,8 @@ function loginCheck(){
   let userId = document.getElementById('userId').value;
   let userPw = document.getElementById('userPw').value;
 
-  let loginData = {"userId": userId, "userPw": userPw};
+  let loginData = {"loginId": userId, "password": userPw};
+  
   console.log(loginData);
   $.ajax({
     type: "POST",
@@ -94,4 +95,23 @@ function loginCheck(){
 function inputValueChange(){
   var userId = document.getElementById('userId').value;
   console.log(userId);
+}
+
+function logoutCheck(){
+  $.ajax({
+    type: "POST",
+    url: "http://15.165.102.73:8090/logout",
+    contentType: "application/json",
+    dataType: "json",
+    success: function(result) {
+      if(result == 1) {
+        window.location.href = "index.html";
+      } else {
+        alert("회원없음");
+      }
+    },
+    error: function(error){
+      console.log(error);
+    }
+  })
 }
