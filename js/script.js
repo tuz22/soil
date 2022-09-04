@@ -73,16 +73,13 @@ function loginCheck(){
   console.log(loginData);
   $.ajax({
     type: "POST",
-    url: "http://3.39.198.111:8090/login",
+    url: "http://15.165.102.73:8090/login",
     contentType: "application/json",
     dataType: "json",
     data: JSON.stringify(loginData),
     success: function(result){
-      if (result == 0){
+      if (result == -1){
         alert("아이디, 비번 재확인");
-        return false;
-      } else if (result == 1){
-        alert("통신 오류");
         return false;
       } else {
         window.location.href = "main.html";
