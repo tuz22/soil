@@ -15,7 +15,7 @@ a {
 }
 .loading {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   position: fixed;
   top: 0;
@@ -24,6 +24,10 @@ a {
   left: 0;
   z-index: 10;
   background: #f3f2f0;
+  opacity: 0;
+  transition: 3s;
+}
+.before-load .loading {
   opacity: 1;
 }
 svg text {
@@ -31,34 +35,34 @@ svg text {
   fill: transparent;
   stroke-width: 1px;
   stroke-dasharray: 386px;
-  animation: stroke 6s infinite;
+  animation: stroke 2s infinite;
 }
 svg text:nth-child(1) {
   stroke: black;
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 svg text:nth-child(2) {
   stroke: black;
-  animation-delay: 1s;
+  animation-delay: 0.3s;
 }
 svg text:nth-child(3) {
   stroke: black;
-  animation-delay: 2s;
+  animation-delay: 0.5s;
 }
 svg text:nth-child(4) {
-  animation-delay: 3.4s;
+  animation-delay: 0.8s;
   stroke: black;
 }
 svg text:nth-child(5) {
-  animation-delay: 4.5s;
+  animation-delay: 1.2s;
   stroke: black;
 }
 svg text:nth-child(6) {
-  animation-delay: 4.9s;
+  animation-delay: 1.4s;
   stroke: black;
 }
 svg text:nth-child(7) {
-  animation-delay: 5.3s;
+  animation-delay: 1.5s;
   stroke: black;
 }
 @keyframes stroke {

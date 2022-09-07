@@ -46,6 +46,11 @@ function fontStyle(type) {
   resultElement.innerText = fontStyle;
 }
 
+// 로딩 애니메이션 적용
+window.addEventListener('load', () => {
+  document.body.removeChild(document.querySelector('.loading'));
+});
+
 // 로그인 체크
 function loginCheck(){
   let userId = document.getElementById('userId').value;
@@ -59,13 +64,6 @@ function loginCheck(){
     url: "http://15.165.102.73:8090/login",
     contentType: "application/json",
     dataType: "json",
-    header: {
-      // "Access-Control-Request-Method":"Vary",
-      // "Access-control-allow-origin": "*",
-      // "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
-      // "Access-Control-Max-Age": "3600",
-      // "Access-Control-Allow-Headers": "Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization"
-  },
     data: JSON.stringify(loginData),
     success: function(result){
       if (result == -1){
