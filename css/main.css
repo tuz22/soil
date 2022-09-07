@@ -18,12 +18,37 @@ a {
   flex-direction: column;
   align-content: center;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   min-height: 100vh;
+}
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .logo-title {
   font-size: 2rem;
   text-align: center;
+}
+.box {
+  font-size: 2rem;
+  padding: 0.6em 1em;
+  margin-top: 0.5em;
+  border: 2px solid #204630;
+  border-radius: 0.5em;
+  background-color: transparent;
+  letter-spacing: 5px;
+  font-weight: bold;
+  position: relative;
+}
+.btn-login {
+  font-size: 2em;
+}
+.btn-login:hover {
+  color: #449666;
+  font-weight: 400;
 }
 .btn {
   font-size: 2rem;

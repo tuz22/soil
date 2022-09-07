@@ -46,24 +46,6 @@ function fontStyle(type) {
   resultElement.innerText = fontStyle;
 }
 
-// 쿠키를 설정 또는 수정
-// function set_cookie(cookie_info) {
-//   if (chk_cookie_max_size_over(cookie_info)) {
-//       cookie_info['key1'] = [];
-//       cookie_info['key2'] = [];
-//   }
-
-//   var now_hostname = window.location.hostname;
-
-//   if (cookie_info['key1'].length) {
-//       document.cookie = "key1=" + encodeURI(JSON.stringify(cookie_info['key1'])) + "; path=/; domain=" + now_hostname;
-//       document.cookie = "key2=" + encodeURI(JSON.stringify(cookie_info['key2'])) + "; path=/; domain=" + now_hostname;
-//   } else {
-//       document.cookie = "key1=" + encodeURI(JSON.stringify(cookie_info['key1'])) + "; path=/; domain=" + now_hostname + "; max-age=0";
-//       document.cookie = "key2=" + encodeURI(JSON.stringify(cookie_info['key2'])) + "; path=/; domain=" + now_hostname + "; max-age=0";
-//   }
-// }
-
 // 로그인 체크
 function loginCheck(){
   let userId = document.getElementById('userId').value;
@@ -77,6 +59,13 @@ function loginCheck(){
     url: "http://15.165.102.73:8090/login",
     contentType: "application/json",
     dataType: "json",
+    header: {
+      // "Access-Control-Request-Method":"Vary",
+      // "Access-control-allow-origin": "*",
+      // "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+      // "Access-Control-Max-Age": "3600",
+      // "Access-Control-Allow-Headers": "Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization"
+  },
     data: JSON.stringify(loginData),
     success: function(result){
       if (result == -1){
@@ -97,6 +86,7 @@ function inputValueChange(){
   console.log(userId);
 }
 
+// 로그아웃
 function logoutCheck(){
   $.ajax({
     type: "POST",

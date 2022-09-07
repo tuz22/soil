@@ -13,15 +13,18 @@
   <div class="container">
       <div class="logo">
         <div class="logo-img"></div>
-        <div class="logo-title"><h1>소비일기</h1></div>
-        <div class="start">
-          <div class="btn-guest-start"><a href="main.html">게스트로 시작하기</a></div> 
-          <button class="btn btn-user-start" onclick="location.href='main.html'">시작하기</button>
+        <!-- <div class="logo-title"><h1>소비일기</h1></div> -->
+        <!-- <div class="start"> -->
+          <!-- <div class="btn-guest-start"><a href="main.html">게스트로 시작하기</a></div>  -->
+          <!-- <button class="btn btn-user-start" onclick="location.href='main.html'">시작하기</button> -->
+        <!-- </div> -->
+        <h2 class="join-caption">사용할 아이디, 비밀번호를 입력해주세요.</h2>
+        <div class="login-box">
+          <input class="box" type="text" id="userId" value="" onchange="inputValueChange()" placeholder="아이디">
+          <input class="box" type="password" id="userPw" value="" placeholder="비밀번호">
         </div>
-        <input type="text" id="userId" value="" onchange="inputValueChange()" placeholder="아이디">
-        <input type="password" id="userPw" value="" placeholder="비밀번호">
-        <button onclick="loginCheck();">로그인</button>
-        <button onclick="logoutCheck();">로그아웃</button>
+          <button class="btn-login" onclick="loginCheck();">시작하기</button>
+        <!-- <button onclick="logoutCheck();">로그아웃</button> -->
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
