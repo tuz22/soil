@@ -57,7 +57,7 @@ function loginCheck(){
   let userPw = document.getElementById('userPw').value;
 
   let loginData = {"loginId": userId, "password": userPw};
-  
+
   console.log(loginData);
   $.ajax({
     type: "POST",
@@ -70,6 +70,7 @@ function loginCheck(){
         alert("아이디, 비번 재확인");
         return false;
       } else {
+        console.log("로그인 성공");
         window.location.href = "main.html";
       }
     },
@@ -103,3 +104,6 @@ function logoutCheck(){
     }
   })
 }
+
+
+

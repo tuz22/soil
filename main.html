@@ -10,14 +10,15 @@
 </head>
 <body>
   <!-- 일기 목록 -->
-  <div class="container">
+  <div class="container" id="tableDiary">
     <header>
       <h1><a href=index.html>소비일기</a></h1>
     </header>
     <table class="diary">
+    <table class="diary">
       <thead>
         <tr>
-          <td>2</td><!-- 글번호 -->
+          <td>2</td>
           <td>|</td>
         </tr>
       </thead>
@@ -26,7 +27,7 @@
           <td><h3>글제목</h3></td>
         </tr>
         <tr>
-          <td class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit eos maxime dolorem accusamus possimus quas aliquam quos minus, illo labore eum pariatur rem minima doloremque ad? Hic ad libero sunt sit aspernatur sequi, et corrupti consectetur at facilis, ratione corporis quaerat! Consectetur, possimus est eveniet aliquid ipsum necessitatibus, dolore aperiam voluptatibus quod error odit officiis quaerat voluptatem fugiat eius et ipsa deserunt natus dolores architecto. Quibusdam doloremque explicabo molestias alias tempora maiores assumenda tempore beatae eum veniam, modi amet libero corrupti cum hic architecto iure! Fugit sapiente facere provident cupiditate dolorem corporis natus eos ipsam ratione, aliquam atque voluptas quidem.</td>
+          <td class="content" id="diaryContent">나오니?</td>
         </tr>
       </tbody>
       <tfoot>
@@ -38,7 +39,7 @@
     <table class="diary">
       <thead>
         <tr>
-          <td>1</td><!-- 글번호 -->
+          <td>1</td>
           <td>|</td>
         </tr>
       </thead>
@@ -66,33 +67,6 @@
     </footer>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-  <script>
-    $(document).ready(function(){
-      $.ajax({
-        type: "GET",
-        url: "http://15.165.102.73:8090/diaries/5",
-        dataType: "json",
-        cors: true,
-        contentType: "application/json",
-        secure: true,
-        headers: {
-          "X-Requested-With": "XMLHttpRequest"
-
-        },
-        success: function(data) {
-          console.log(JSON.stringify(data));
-
-          $.each(data, function(item) {
-					$(".content").append(item + " ");
-					
-				});
-        },
-        error: function(error){
-          console.log(error);
-        }
-      });
-    });
-  </script>
-<script src="js/script.js"></script>
+<script src="js/diary.js"></script>
 </body>
 </html>
