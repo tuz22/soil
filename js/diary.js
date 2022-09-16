@@ -6,8 +6,8 @@
 
 // 회원 일기 목록 조회
 $(document).ready(function() {
-  // diaryIndex();
-  console.log(sessionStorage.getItem('loginMember'));
+  diaryIndex();
+  // console.log(sessionStorage.getItem('loginMember'));
 });
   
   function diaryIndex(){
@@ -24,30 +24,23 @@ $(document).ready(function() {
     success: function(data) {
       console.log(JSON.stringify(data));
 
-      // let arr = data.diaryList;
-      // let txt = "";
-
-      // alert(arr.length);
-
-      // for(i = 0; i < arr.length; i++){
-      //   for(key in arr[i]){
-      //     txt += key + ":" + arr[i][key] + " ";
-      //   }
-      // }
-
-      let content = document.getElementById('diaryContent');
-      let tableDiary = document.getElementById('tableDiary');
-
       let diaryData = data.diaryList;
       let str = "";
+
       $.each(diaryData, function(i){
-        str += "<table>"
-        str += "<thead><tr>"
-        str += "<td>" + diaryData[i].content + "</td><td>|</td>"
-        str += "</tr></thead>"
+        str += "<table class='diary'>"
+        str += "  <thead>"
+        str += "    <tr><td>" + i + "</td><td>|</td></tr>"
+        str += "  </thead>"
+        str += "  <tbody>"
+        str += "    <tr><td>" + diaryData[i].title + "</td></tr>"
+        str += "    <tr><td>" + diaryData[i].content + "</td></tr>"
+        str += "  </tbody>"
+        str += "  <tfoot>"
+        str += "    <tr><td>" + diaryData[i].date.substr(0,10) + "</td></tr>"
+        str += "  </tfoot>"
         str += "</table>"
       });
-      console.log("출력: "+data.diaryList[0].content);
       $('#tableDiary').append(str);
     },
     error: function(error){
