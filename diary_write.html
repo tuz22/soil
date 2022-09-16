@@ -12,15 +12,13 @@
   <!-- 일기 작성 -->
   <div class="container">
     <header>
-      <h1><a href=javascript:history.back()><div class="history-back"><</div></a></h1>
+      <h1><a href='#'><div class="history-back"><</div></a></h1>
     </header>
     <table class="diary-write-header">
       <thead>
         <td class="list">카테고리:</td>
         <td>
-          <!-- <button onclick="openCategories('categories.html')"><img class="menu-icon" src="img/categories-64.png" alt=""></button> -->
-          <!-- <input type="text" id="answer" readonly> -->
-          <select name="categories" id="">
+          <select name="categories" id="diaryCategory">
             <option value="0">카테고리를 선택하세요.</option>
             <option value="1">카테고리1</option>
             <option value="2">카테고리2</option>
@@ -30,11 +28,11 @@
         </td>
         <tr>
           <td class="list">구매항목:</td>
-          <td>aliquam atque voluptas quidem.</td>
+          <td><input type="text" id="diaryTitle" value=""></td>
         </tr>
         <tr>
           <td class="list">가격:</td>
-          <td>12,500</td>
+          <td><input type="text" id="diaryPrice" value=""></td>
         </tr>
       </thead>
     </table>
@@ -42,8 +40,7 @@
       <tbody>
         <td class="date">2022.08.25</td>
         <tr>
-          <td class="content"><textarea name="diaryContent" id="" placeholder="무엇이든 기록을 해보자."></textarea></td>
-          
+          <td class="content"><textarea name="diaryContent" id="diaryContent" value="" placeholder="무엇이든 기록을 해보자."></textarea></td>
         </tr>
       </tbody>
       <tfoot>
@@ -56,7 +53,8 @@
         <a href="#" class="nav-item"><img class="menu-icon" src="img/settings-64.png" alt="setting">설정</a>
       </nav>
     </footer>
-  </div>s
-  <script src="js/script.js"></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script src="js/diary.js"></script>
 </body>
 </html>

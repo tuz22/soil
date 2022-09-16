@@ -300,6 +300,9 @@ table.diary-write-header {
   border: 0;
   /* padding: 0 1rem; */
 }
+.diary-write-header input {
+  border: none;
+}
 /* table.diary-write {
   display: flex;
   flex-wrap: wrap;
@@ -338,6 +341,7 @@ table.diary-write-header {
 .diary-write tfoot span {
   padding: 0.5rem;
 }
+
 /* .diary-write thead td{
   padding: 0 1rem 1rem 1rem;
   align-items: center;
