@@ -21,11 +21,10 @@
 
       let diaryData = data.diaryList;
       let str = "";
-
       $.each(diaryData, function(i){
-        str += "<table class='diary'>"
+        str += "<table class='diary' onclick='location.href=`diary_read.html`'>"
         str += "  <thead>"
-        str += "    <tr><td>" + i + "</td><td>|</td></tr>"
+        str += "    <tr><td id='diaryId'>" + i + "</td><td>|</td></tr>"
         str += "  </thead>"
         str += "  <tbody>"
         str += "    <tr><td>" + diaryData[i].title + "</td></tr>"
@@ -34,7 +33,7 @@
         str += "  <tfoot>"
         str += "    <tr><td>" + diaryData[i].date.substr(0,10) + "</td></tr>"
         str += "  </tfoot>"
-        str += "</table>"
+        str += "</a>"
       });
       $('#tableDiary').append(str);
     },
@@ -44,20 +43,41 @@
   });
 };
 
-$(document).ready(function() {
-  diaryIndex();
-  // console.log(sessionStorage.getItem('loginMember'));
-});
+/* 회원 일기 개별 조회 */
+function readDiary() {
+  let userId = 5;
+  let diaryId = 7;
+  let readData = {"member_id": userId, "diary_id": diaryId};
+  $.ajax({
+    type: "GET",
+    url: "http://15.165.102.73:8090/diaries/5/7",
+    dataType: "json",
+    cors: true,
+    contentType: "application/json",
+    data: JSON.stringify(readData),
+    success: function(data) {
+      console.log(JSON.stringify(data));
+      alert('성공');
+      
+    },
+    error: function(error) {
+      console.log(error);
+      alert('에러!');
+    }
+  })
+}
+
 
 /* 현재 날짜 */
-let today = new Date();
-
-let year = today.getFullYear();
-let month = ('0' + (today.getMonth() + 1)).slice(-2);
-let day = ('0' + today.getDate()).slice(-2);
-let date = year + '-' + month + '-' + day;
-
-document.getElementsByClassName('date')[0].innerHTML = date;
+function today(){
+  let today = new Date();
+  let year = today.getFullYear();
+  let month = ('0' + (today.getMonth() + 1)).slice(-2);
+  let day = ('0' + today.getDate()).slice(-2);
+  let date = year + '-' + month + '-' + day;
+  
+  document.getElementsByClassName('date')[0].innerHTML = date;
+}
 
 /* 새 일기 등록 */
 function diaryRegister() {

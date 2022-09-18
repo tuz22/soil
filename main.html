@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="css/default.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body onload="diaryIndex();">
   <!-- 일기 목록 -->
   <div class="container" id="tableDiary">
     <header>
       <h1><a href=index.html>소비일기</a></h1>
     </header>
-    <!-- <table class="diary">
+    <table class="diary" onclick="location.href='diary_read.html'">
       <thead>
         <tr>
           <td id="diaryNumb">번호</td>
@@ -34,7 +34,7 @@
           <td class="diary-date" id="diaryDate">날짜</td>
         </tr>
       </tfoot>
-    </table> -->
+    </table>
     <footer>
       <nav class="nav-categories">
         <a href="main.html" class="nav-item"><img class="menu-icon" src="img/money-box-64.png" alt="diary">소비기록</a>
