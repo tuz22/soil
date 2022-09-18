@@ -66,7 +66,7 @@ function diaryRegister() {
   let diaryPrice = document.getElementById('diaryPrice').value;
   let diaryContent = document.getElementById('diaryContent').value;
   
-  let userId = 'memberA';
+  let userId = 5;
   
   let newDiary = {"member_id": userId, "category_id": diaryCategory, "title": diaryTitle, "content": diaryContent, "price": diaryPrice};
 
@@ -86,7 +86,6 @@ function diaryRegister() {
         return false;
       } else {
         alert('성공');
-        alert(msg);
       }
     },
     error: function(error) {
