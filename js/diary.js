@@ -24,7 +24,10 @@
       $.each(diaryData, function(i){
         str += "<table class='diary' onclick='location.href=`diary_read.html`'>"
         str += "  <thead>"
-        str += "    <tr><td id='diaryId'>" + i + "</td><td>|</td></tr>"
+        str += "    <tr>"
+        str += "      <td id='diaryNumb'>" + i + "</td><td>|</td>"
+        str += "      <td class='diary-id' id='diaryId' value='" + diaryData[i].diary_id + "'></td>"
+        str += "    </tr>"
         str += "  </thead>"
         str += "  <tbody>"
         str += "    <tr><td>" + diaryData[i].title + "</td></tr>"
@@ -47,18 +50,27 @@
 function readDiary() {
   let userId = 5;
   let diaryId = 7;
-  let readData = {"member_id": userId, "diary_id": diaryId};
   $.ajax({
     type: "GET",
-    url: "http://15.165.102.73:8090/diaries/5/7",
+    url: "http://15.165.102.73:8090/diaries/"+ userId + "/" + diaryId,
     dataType: "json",
-    cors: true,
     contentType: "application/json",
-    data: JSON.stringify(readData),
+    cors: true,
+    secure: true,
+    headers: {
+      "X-Requested-With": "XMLHttpRequest"
+    },
     success: function(data) {
+      console.log('성공');
       console.log(JSON.stringify(data));
-      alert('성공');
-      
+
+      let diaryData = data.diaryList;   
+      document.querySelector('.diaryCategory').innerHTML = '카테고리 데이터 없음';
+      document.querySelector('.diaryTitle').innerHTML = data.title;
+      document.querySelector('.diaryPrice').innerHTML = data.price;
+      document.querySelector('.date').innerHTML = data.date.substr(0,10);
+      document.querySelector('.content').innerHTML = data.content;
+      console.log(data);
     },
     error: function(error) {
       console.log(error);

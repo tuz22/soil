@@ -10,29 +10,21 @@
 </head>
 <body onload="readDiary();">
   <!-- 일기 조회 -->
-  <div class="container">
+  <div class="container" id="tableDiary">
     <header>
       <h1><a href='javascript:history.back()'><div class="history-back"><</div></a></h1>
     </header>
-    <!-- <table class="diary-write-header">
+    <table class="diary-write-header">
       <thead>
         <td class="list">카테고리:</td>
-        <td>
-          <select name="categories" id="diaryCategory">
-            <option value="0">카테고리를 선택하세요.</option>
-            <option value="1">카테고리1</option>
-            <option value="2">카테고리2</option>
-            <option value="3">카테고리3</option>
-            <option value="4">카테고리4</option>
-          </select>
-        </td>
+        <td class="diaryCategory"></td>
         <tr>
           <td class="list">구매항목:</td>
-          <td><input type="text" id="diaryTitle" value=""></td>
+          <td class="diaryTitle"></td>
         </tr>
         <tr>
           <td class="list">가격:</td>
-          <td><input type="text" id="diaryPrice" value=""></td>
+          <td class="diaryPrice"></td>
         </tr>
       </thead>
     </table>
@@ -45,7 +37,7 @@
       </tbody>
       <tfoot>
       </tfoot>
-    </table> -->
+    </table>
     <footer>
       <nav class="nav-categories">
         <a href="main.html" class="nav-item"><img class="menu-icon" src="img/money-box-64.png" alt="diary">소비기록</a>

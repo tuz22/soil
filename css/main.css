@@ -232,6 +232,9 @@ table.diary {
 .diary thead span {
   padding-left: 1rem;
 }
+.diary-id {
+  display: none;
+}
 .diary tbody {
   padding: 1rem;
   width: 100%;
