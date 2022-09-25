@@ -100,3 +100,63 @@ setTimeout(() => {
     }
 }, 1000);
 
+/* 회원 일기 수정 */
+function updateDiary(diaryId) {
+  let diaryTitle = document.querySelector('#diaryTitle').value;
+  let diaryPrice = document.querySelector('#diaryPrice').value;
+  let diaryContent = document.querySelector('#diaryContent').value;
+  let diaryData = {"title": diaryTitle , "price": diaryPrice, "content": diaryContent};
+
+  console.log(diaryData);
+
+  $.ajax({
+    type: "PATCH",
+    url: "http://15.165.102.73:8090/diaries/"+ diaryId,
+    dataType: "json",
+    data: JSON.stringify(diaryData),
+    contentType: "application/json",
+    cors: true,
+    secure: true,
+    headers: {
+      "X-Requested-With": "XMLHttpRequest"
+    },
+    success: function(data) {
+      console.log('수정 성공');
+      console.log(JSON.stringify(data));
+      location.href = "main.html";
+    },
+    error: function(error) {
+      console.log(error);
+      alert('에러!');
+    }
+  })
+}
+
+/* 뒤로가기 및 수정여부 */
+// document.getElementsByClassName('read-history-back')[0].addEventListener('click', function(){
+//   let diaryId = document.getElementById('diaryId').value;
+//   let diaryTitle = document.getElementById('diaryTitle').value;
+//   let diaryPrice = document.getElementById('diaryPrice').value;
+//   let diaryContent = document.getElementById('diaryContent').value;
+//   console.log("아이디"+diaryId);
+//   if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
+//     alert('일기 저장할거임');
+//     updateDiary(diaryId);
+//   } else {
+//     alert('일기 저장안함');
+//   }
+// })
+
+document.getElementsByClassName('updateBtn')[0].addEventListener('click', function(){
+  let diaryId = document.getElementById('diaryId').value;
+  let diaryTitle = document.getElementById('diaryTitle').value;
+  let diaryPrice = document.getElementById('diaryPrice').value;
+  let diaryContent = document.getElementById('diaryContent').value;
+  console.log("아이디"+diaryId);
+  if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
+    alert('일기 저장할거임');
+    updateDiary(diaryId);
+  } else {
+    alert('일기 저장안함');
+  }
+})
