@@ -165,6 +165,8 @@ header h1{
   padding: 0.5rem 0;
   text-align: center;
   border-bottom: 2px solid #204630;
+  background-color: #f3f2f0;
+  z-index: 10;
 }
 .nav-categories {
   position: fixed;
@@ -184,6 +186,9 @@ header h1{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+.off {
+  display: none;
 }
 table {
   position: relative;
@@ -443,6 +448,7 @@ footer {
   bottom: 1rem;
   right: 1.5rem;
   margin-top: 1rem;
+  z-index: 10;
 }
 div.margin {
   padding: 1rem;
@@ -495,7 +501,7 @@ div.margin {
   height: 30px;
   vertical-align: middle;
 }
-.history-back {
+.back {
   text-align: left;
   margin-left: 20px;
   line-height: 40px;

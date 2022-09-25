@@ -10,16 +10,17 @@
 </head>
 <body onload="diaryIndex();">
   <!-- 일기 목록 -->
-  <div class="container" id="tableDiary">
+  <div class="container diary-index" id="tableDiary">
     <header>
       <h1><a href=index.html>소비일기</a></h1>
     </header>
-    <table class="diary" onclick="location.href='diary_read.html'">
+    <!-- <table class="diary" onclick="location.href='diary_read.html'">
       <thead>
         <tr>
           <td id="diaryNumb">번호</td>
           <td>|</td>
-          <td class="diary-id" id="diaryId">a</td>
+          <td class="diary-id" id="diaryId" value="a">a</td>
+          <td><input class="diary-id" value="d"></td>
         </tr>
       </thead>
       <tbody>
@@ -35,7 +36,7 @@
           <td class="diary-date" id="diaryDate">날짜</td>
         </tr>
       </tfoot>
-    </table>
+    </table> -->
     <footer>
       <nav class="nav-categories">
         <a href="main.html" class="nav-item"><img class="menu-icon" src="img/money-box-64.png" alt="diary">소비기록</a>
@@ -45,7 +46,38 @@
       <button class="btn-menu write" onclick="location.href='diary_write.html';"><img class="write-icon" src="img/edit-52.png" alt="write"></button>
     </footer>
   </div>
+  <!-- 일기 조회 -->
+  <div class="container diary-read off" id="tableDiary">
+    <header>
+      <h1><a href='main.html'><div class="back read-history-back"><</div></a></h1>
+    </header>
+    <table class="diary-write-header">
+      <thead>
+        <td class="list">카테고리:</td>
+        <td id="diaryCategory"></td>
+        <tr>
+          <td class="list">구매항목:</td>
+          <td><input type="text" id="diaryTitle" value=""></td>
+        </tr>
+        <tr>
+          <td class="list">가격:</td>
+          <td><input type="text" id="diaryPrice"></td>
+        </tr>
+      </thead>
+    </table>
+    <table class="diary-write">
+      <tbody>
+        <td class="diary-id" id="diaryId"></td>
+        <td class="date" id="date">2022.08.25</td>
+        <tr>
+          <td class="content"><textarea name="diaryContent" id="diaryContent" value="" placeholder="무엇이든 기록을 해보자."></textarea></td>
+        </tr>
+      </tbody>
+      <tfoot>
+      </tfoot>
+    </table>
+  </div>
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script src="js/diary.js"></script>
+  <script src="js/diary.js"></script>
 </body>
 </html>

@@ -1,8 +1,3 @@
-// $("#login").click(function() {
-//   setTimeout(() => {
-//       diaryIndex();
-//   }, 300);
-// })
 
 // 회원 일기 목록 조회  
   function diaryIndex() {
@@ -22,11 +17,12 @@
       let diaryData = data.diaryList;
       let str = "";
       $.each(diaryData, function(i){
-        str += "<table class='diary' onclick='location.href=`diary_read.html`'>"
+        // str += "<table class='diary' onclick='location.href=`diary_read.html`'>"
+        str += "<table class='diary'>"
         str += "  <thead>"
         str += "    <tr>"
-        str += "      <td id='diaryNumb'>" + i + "</td><td>|</td>"
-        str += "      <td class='diary-id' id='diaryId' value='" + diaryData[i].diary_id + "'></td>"
+        str += "      <td id='diaryNumb'>" + i
+        str += "        <input class='diary-id' value='" + diaryData[i].diary_id + "'>"+ "</td><td>|</td>"
         str += "    </tr>"
         str += "  </thead>"
         str += "  <tbody>"
@@ -47,9 +43,8 @@
 };
 
 /* 회원 일기 개별 조회 */
-function readDiary() {
+function readDiary(diaryId) {
   let userId = 5;
-  let diaryId = 7;
   $.ajax({
     type: "GET",
     url: "http://15.165.102.73:8090/diaries/"+ userId + "/" + diaryId,
@@ -63,14 +58,13 @@ function readDiary() {
     success: function(data) {
       console.log('성공');
       console.log(JSON.stringify(data));
-
-      let diaryData = data.diaryList;   
-      document.querySelector('.diaryCategory').innerHTML = '카테고리 데이터 없음';
-      document.querySelector('.diaryTitle').innerHTML = data.title;
-      document.querySelector('.diaryPrice').innerHTML = data.price;
-      document.querySelector('.date').innerHTML = data.date.substr(0,10);
-      document.querySelector('.content').innerHTML = data.content;
-      console.log(data);
+      
+      document.querySelector('#diaryId').value = data.diary_id;
+      document.querySelector('#diaryCategory').innerHTML = data.category;
+      document.querySelector('#diaryTitle').value = data.title;
+      document.querySelector('#diaryPrice').value = data.price;
+      document.querySelector('#date').innerHTML = data.date.substr(0,10);
+      document.querySelector('#diaryContent').innerHTML = data.content;
     },
     error: function(error) {
       console.log(error);
@@ -78,7 +72,6 @@ function readDiary() {
     }
   })
 }
-
 
 /* 현재 날짜 */
 function today(){
@@ -91,53 +84,19 @@ function today(){
   document.getElementsByClassName('date')[0].innerHTML = date;
 }
 
-/* 새 일기 등록 */
-function diaryRegister() {
-  let diaryCategory = document.getElementById('diaryCategory').value;
-  let diaryTitle = document.getElementById('diaryTitle').value;
-  let diaryPrice = document.getElementById('diaryPrice').value;
-  let diaryContent = document.getElementById('diaryContent').value;
+setTimeout(() => {
+  let diaryTable = document.getElementsByClassName('diary');
+  let diaryIds = document.getElementsByClassName('diary-id');
   
-  let userId = 5;
-  
-  let newDiary = {"member_id": userId, "category_id": diaryCategory, "title": diaryTitle, "content": diaryContent, "price": diaryPrice};
-
-  $.ajax({
-    type: "POST",
-    url: "http://15.165.102.73:8090/diaries",
-    dataType: "json",
-    contentType: "application/json",
-    data: JSON.stringify(newDiary),
-    secure: true,
-    headers: {
-      "X-Requested-With": "XMLHttpRequest"
-    },
-    success: function(result) {
-      if (result == -1) {
-        alert('실패');
-        return false;
-      } else {
-        alert('성공');
-      }
-    },
-    error: function(error) {
-      console.log(error);
-      alert('에러!');
+  for (let i = 0; i < diaryTable.length; i++ ) {
+    
+    diaryTable[i].addEventListener('click', function(){
+      document.querySelector('.diary-index').classList.add('off');
+      document.querySelector('.diary-read').classList.remove('off');
+      let diaryIdValue = diaryIds[i].value;
+      console.log("id: "+diaryIdValue);
+      readDiary(diaryIdValue);
+    });
     }
-  })
-}
+}, 1000);
 
-document.getElementsByClassName('history-back')[0].addEventListener('click', function(){
-  let diaryCategory = document.getElementById('diaryCategory').value;
-  let diaryTitle = document.getElementById('diaryTitle').value;
-  let diaryPrice = document.getElementById('diaryPrice').value;
-  let diaryContent = document.getElementById('diaryContent').value;
-  
-  alert(diaryCategory + diaryTitle + diaryPrice + diaryContent);
-  if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
-    alert('일기 저장할거임');
-    diaryRegister();
-  } else {
-    alert('일기 저장안함');
-  }
-})
