@@ -1,3 +1,6 @@
+Kakao.init('f5d2c043a7d9eb0f04eece4804a9d471');
+console.log(Kakao.isInitialized());
+
 function btnPlus(e) {
   e.classList.toggle("change");
 }
@@ -62,6 +65,7 @@ function loginCheck(){
   $.ajax({
     type: "POST",
     url: "http://15.165.102.73:8090/login",
+    // url: "http://localhost:8080/main.html",
     contentType: "application/json",
     dataType: "json",
     data: JSON.stringify(loginData),
@@ -78,6 +82,9 @@ function loginCheck(){
       console.log(error);
     }
   })
+//   Kakao.Auth.authorize({
+//     redirectUri: 'http://localhost:5500/oauth/kakao',
+// });
 }
 
 function inputValueChange(){
@@ -104,6 +111,3 @@ function logoutCheck(){
     }
   })
 }
-
-
-

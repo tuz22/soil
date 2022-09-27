@@ -1,5 +1,17 @@
-/* 뒤로가기 및 저장여부 */
-document.getElementsByClassName('write-history-back')[0].addEventListener('click', function(){
+/* 현재 날짜 */
+function today(){
+  let today = new Date();
+  let year = today.getFullYear();
+  let month = ('0' + (today.getMonth() + 1)).slice(-2);
+  let day = ('0' + today.getDate()).slice(-2);
+  let date = year + '-' + month + '-' + day;
+  
+  document.getElementsByClassName('date')[0].innerHTML = date;
+}
+today();
+
+/* 저장여부 */
+document.getElementsByClassName('btn-create')[0].addEventListener('click', function(){
   let diaryCategory = document.getElementById('diaryCategory').value;
   let diaryTitle = document.getElementById('diaryTitle').value;
   let diaryPrice = document.getElementById('diaryPrice').value;
@@ -7,8 +19,9 @@ document.getElementsByClassName('write-history-back')[0].addEventListener('click
   
   // alert(diaryCategory + diaryTitle + diaryPrice + diaryContent);
   if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
-    alert('일기 저장할거임');
+    alert('저장했어요.');
     diaryRegister();
+    location.href = "main.html";
   } else {
     alert('일기 저장안함');
   }
@@ -41,6 +54,7 @@ function diaryRegister() {
         return false;
       } else {
         alert('성공');
+
       }
     },
     error: function(error) {

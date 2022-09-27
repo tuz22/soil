@@ -44,12 +44,15 @@
         <a href="setting.html" class="nav-item"><img class="menu-icon" src="img/settings-64.png" alt="setting">설정</a>
       </nav>
       <button class="btn-menu write" onclick="location.href='diary_write.html';"><img class="write-icon" src="img/edit-52.png" alt="write"></button>
+      <!-- <button class="btn-menu write" onclick="kko();"><img class="write-icon" src="img/edit-52.png" alt="write"></button> -->
     </footer>
   </div>
   <!-- 일기 조회 -->
   <div class="container diary-read off" id="tableDiary">
     <header>
-      <h1><a href='main.html'><div class="back read-history-back"><</div></a></h1>
+      <h1>
+        <a href='main.html'><div class="back read-history-back"><</div></a>
+      </h1>
     </header>
     <table class="diary-write-header">
       <thead>
@@ -68,8 +71,11 @@
     <table class="diary-write">
       <tbody>
         <td class="diary-id" id="diaryId"></td>
-        <td class="date" id=""><button class="updateBtn">수정</button></td>
-        <td class="date" id="date">2022.08.25</td>
+        <td class="btn-box" id="">
+          <button class="btn-update">수정</button>
+          <button class="btn-delete">삭제</button>
+          <span class="date" id="date">2022.08.25</span>
+        </td>
         <tr>
           <td class="content"><textarea name="diaryContent" id="diaryContent" value="" placeholder="무엇이든 기록을 해보자."></textarea></td>
         </tr>
@@ -79,6 +85,8 @@
     </table>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js" integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
   <script src="js/diary.js"></script>
+  <script src="js/dUpdate.js"></script>
 </body>
 </html>

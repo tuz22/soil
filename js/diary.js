@@ -1,4 +1,3 @@
-
 // 회원 일기 목록 조회  
   function diaryIndex() {
   $.ajax({
@@ -73,17 +72,6 @@ function readDiary(diaryId) {
   })
 }
 
-/* 현재 날짜 */
-function today(){
-  let today = new Date();
-  let year = today.getFullYear();
-  let month = ('0' + (today.getMonth() + 1)).slice(-2);
-  let day = ('0' + today.getDate()).slice(-2);
-  let date = year + '-' + month + '-' + day;
-  
-  document.getElementsByClassName('date')[0].innerHTML = date;
-}
-
 setTimeout(() => {
   let diaryTable = document.getElementsByClassName('diary');
   let diaryIds = document.getElementsByClassName('diary-id');
@@ -100,63 +88,17 @@ setTimeout(() => {
     }
 }, 1000);
 
-/* 회원 일기 수정 */
-function updateDiary(diaryId) {
-  let diaryTitle = document.querySelector('#diaryTitle').value;
-  let diaryPrice = document.querySelector('#diaryPrice').value;
-  let diaryContent = document.querySelector('#diaryContent').value;
-  let diaryData = {"title": diaryTitle , "price": diaryPrice, "content": diaryContent};
-
-  console.log(diaryData);
-
-  $.ajax({
-    type: "PATCH",
-    url: "http://15.165.102.73:8090/diaries/"+ diaryId,
-    dataType: "json",
-    data: JSON.stringify(diaryData),
-    contentType: "application/json",
-    cors: true,
-    secure: true,
-    headers: {
-      "X-Requested-With": "XMLHttpRequest"
-    },
-    success: function(data) {
-      console.log('수정 성공');
-      console.log(JSON.stringify(data));
-      location.href = "main.html";
-    },
-    error: function(error) {
-      console.log(error);
-      alert('에러!');
-    }
-  })
-}
-
-/* 뒤로가기 및 수정여부 */
-// document.getElementsByClassName('read-history-back')[0].addEventListener('click', function(){
-//   let diaryId = document.getElementById('diaryId').value;
-//   let diaryTitle = document.getElementById('diaryTitle').value;
-//   let diaryPrice = document.getElementById('diaryPrice').value;
-//   let diaryContent = document.getElementById('diaryContent').value;
-//   console.log("아이디"+diaryId);
-//   if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
-//     alert('일기 저장할거임');
-//     updateDiary(diaryId);
-//   } else {
-//     alert('일기 저장안함');
-//   }
-// })
-
-document.getElementsByClassName('updateBtn')[0].addEventListener('click', function(){
-  let diaryId = document.getElementById('diaryId').value;
-  let diaryTitle = document.getElementById('diaryTitle').value;
-  let diaryPrice = document.getElementById('diaryPrice').value;
-  let diaryContent = document.getElementById('diaryContent').value;
-  console.log("아이디"+diaryId);
-  if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
-    alert('일기 저장할거임');
-    updateDiary(diaryId);
-  } else {
-    alert('일기 저장안함');
-  }
-})
+// function kko() {
+//   console.log('kko 호출');
+//   Kakao.API.request({
+//     url: '/v2/user/me',
+//   })
+//     .then(function(res) {
+//       alert(JSON.stringify(res));
+//     })
+//     .catch(function(err) {
+//       alert(
+//         'failed to request user information: ' + JSON.stringify(err)
+//       );
+//     });
+// }

@@ -206,8 +206,12 @@ table {
   padding: 1rem;
   padding-bottom: 0;
 }
-.date {
+.btn-box {
   text-align: right;
+  padding: 0.5 1rem;
+}
+.date {
+  padding: 0 0.5rem;
 }
 .board tbody td {
   width: 100%;
@@ -339,7 +343,7 @@ table.diary-write-header {
 }
 .diary-write tbody td {
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   vertical-align: baseline;
 }
 .diary-write tfoot td {
@@ -349,7 +353,6 @@ table.diary-write-header {
 .diary-write tfoot span {
   padding: 0.5rem;
 }
-
 /* .diary-write thead td{
   padding: 0 1rem 1rem 1rem;
   align-items: center;
