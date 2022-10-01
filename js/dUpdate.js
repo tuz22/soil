@@ -1,6 +1,6 @@
 /* 회원 일기 수정 */
 function updateDiary(diaryId) {
-  let diaryCategory = 1;
+  const diaryCategory = 1;
   let diaryTitle = document.querySelector('#diaryTitle').value;
   let diaryPrice = document.querySelector('#diaryPrice').value;
   let diaryContent = document.querySelector('#diaryContent').value;
@@ -32,7 +32,7 @@ function updateDiary(diaryId) {
 
 /* 수정여부 */
 document.getElementsByClassName('btn-update')[0].addEventListener('click', function(){
-  let diaryId = document.getElementById('diaryId').value;
+  const diaryId = document.getElementById('diaryId').value;
   let diaryTitle = document.getElementById('diaryTitle').value;
   let diaryPrice = document.getElementById('diaryPrice').value;
   let diaryContent = document.getElementById('diaryContent').value;

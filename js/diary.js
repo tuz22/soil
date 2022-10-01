@@ -43,7 +43,7 @@
 
 /* 회원 일기 개별 조회 */
 function readDiary(diaryId) {
-  let userId = 5;
+  const userId = 5;
   $.ajax({
     type: "GET",
     url: "http://15.165.102.73:8090/diaries/"+ userId + "/" + diaryId,
