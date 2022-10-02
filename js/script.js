@@ -110,18 +110,20 @@ window.addEventListener('load', () => {
 // }
 
 // 카카오 로그인
-function kakaoLogin(){
-  Kakao.Auth.authorize({
-    redirectUri: 'http://localhost:5500/oauth/kakao',
-    success: function(){
-      let code = new URL(window.location.href);
-      // code.searchParams.get('code')
-      console.log(code.searchParams.get('code'));
-    },
-    error: function(error){
-      console.log(error);
-    }
-  });
+// function kakaoLogin(){
+//   Kakao.Auth.authorize({
+//     redirectUri: 'http://localhost:5500/oauth/kakao',
+//   });
+// }
+
+// auth url
+function kakaoAuthUrl(){
+  const clientId = "f21227131b5d5b9bb6061128f5abdd55";
+  const redirectUri = "http://15.165.102.73:8090/oauth/token";
+
+  const kakaoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
+
+  location.href = kakaoAuthUrl;
 }
 
 // 인가코드
