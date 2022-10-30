@@ -106,7 +106,7 @@ window.addEventListener('load', () => {
 //   })
 // }
 
-// 로그인 설정
+// 네이버 로그인 설정
 const naverLogin = new naver.LoginWithNaverId(
   {
     clientId: "LlL6YMWLhYjoND1QFApp",
@@ -115,10 +115,13 @@ const naverLogin = new naver.LoginWithNaverId(
   }
 );
 naverLogin.init();
+console.log('a');
 
 // get로그인
 naverLogin.getLoginStatus(function (status) {
+  console.log(JSON.stringify(status));
   if (status) {
+    console.log('b');
     const name = naverLogin.user.getName();
     const email = naverLogin.user.getEmail();
 
@@ -145,5 +148,18 @@ function setLoginStatus(){
   <div>user name : ${naverLogin.user.name}</div>
   <div>user email : ${naverLogin.user.email}</div>
   `;
-  location.href = "main.html";
+  console.log(naverLogin);
+  // console.log(JSON.stringify(data));
+  // location.href = "main.html";
 }
+
+// 접근 토큰으로 프로필 호출
+
+
+// 네이버 로그아웃
+// const naverLogout = document.getElementById('naverLogout');
+
+// naverLogout.addEventListener('click', function(){
+//   naverLogin.logout();
+//   location.replace("http://127.0.0.1:5500");
+// });

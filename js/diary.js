@@ -58,12 +58,14 @@ function readDiary(diaryId) {
       console.log('성공');
       console.log(JSON.stringify(data));
       
-      document.querySelector('#diaryId').value = data.diary_id;
-      document.querySelector('#diaryCategory').innerHTML = data.category;
-      document.querySelector('#diaryTitle').value = data.title;
-      document.querySelector('#diaryPrice').value = data.price;
-      document.querySelector('#date').innerHTML = data.date.substr(0,10);
-      document.querySelector('#diaryContent').innerHTML = data.content;
+      let dData = data.responseEntity;
+
+      document.querySelector('#diaryId').value = dData.diary_id;
+      document.querySelector('#diaryCategory').innerHTML = dData.category;
+      document.querySelector('#diaryTitle').value = dData.title;
+      document.querySelector('#diaryPrice').value = dData.price;
+      // document.querySelector('#date').innerHTML = dData.date.substr(0,10);
+      document.querySelector('#diaryContent').innerHTML = dData.content;
     },
     error: function(error) {
       console.log(error);
