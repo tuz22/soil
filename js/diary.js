@@ -87,18 +87,3 @@ setTimeout(() => {
     });
     }
 }, 1000);
-
-// function kko() {
-//   console.log('kko 호출');
-//   Kakao.API.request({
-//     url: '/v2/user/me',
-//   })
-//     .then(function(res) {
-//       alert(JSON.stringify(res));
-//     })
-//     .catch(function(err) {
-//       alert(
-//         'failed to request user information: ' + JSON.stringify(err)
-//       );
-//     });
-// }

@@ -1,6 +1,3 @@
-Kakao.init('f5d2c043a7d9eb0f04eece4804a9d471');
-console.log(Kakao.isInitialized()); // sdk초기화 여부 판단
-
 function btnPlus(e) {
   e.classList.toggle("change");
 }
@@ -109,24 +106,44 @@ window.addEventListener('load', () => {
 //   })
 // }
 
-// 카카오 로그인
-// function kakaoLogin(){
-//   Kakao.Auth.authorize({
-//     redirectUri: 'http://localhost:5500/oauth/kakao',
-//   });
-// }
+// 로그인 설정
+const naverLogin = new naver.LoginWithNaverId(
+  {
+    clientId: "LlL6YMWLhYjoND1QFApp",
+    callbackUrl: "http://127.0.0.1:5500",
+    loginButton: {color: "green", type: 3, height: 40}
+  }
+);
+naverLogin.init();
 
-// auth url
-function kakaoAuthUrl(){
-  const clientId = "f21227131b5d5b9bb6061128f5abdd55";
-  const redirectUri = "http://15.165.102.73:8090/oauth/token";
+// get로그인
+naverLogin.getLoginStatus(function (status) {
+  if (status) {
+    const name = naverLogin.user.getName();
+    const email = naverLogin.user.getEmail();
 
-  const kakaoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
+    if(name === null||name === undefined ){
+      alert("이름이 필요합니다. 정보제공을 동의해주세요.");
+      naverLogin.reprompt();
+      if(email === null||email === undefined ){
+        alert("이메일이 필요합니다. 정보제공을 동의해주세요.");
+        naverLogin.reprompt();
+      }
+      return;
+    }else{
+      setLoginStatus();
+    }
+  }
+});
+console.log(naverLogin);
 
-  location.href = kakaoAuthUrl;
+// set로그인
+function setLoginStatus(){
+  const message = document.getElementById('message');
+  message.innerHTML = `
+  <h3> Login 성공 </h3>
+  <div>user name : ${naverLogin.user.name}</div>
+  <div>user email : ${naverLogin.user.email}</div>
+  `;
+  location.href = "main.html";
 }
-
-// 인가코드
-let code = new URL(window.location.href);
-// code.searchParams.get('code')
-console.log(code.searchParams.get('code'));
