@@ -148,13 +148,10 @@ function setLoginStatus(){
   <div>user name : ${naverLogin.user.name}</div>
   <div>user email : ${naverLogin.user.email}</div>
   `;
-  console.log(naverLogin);
+  console.log(JSON.stringify(naverLogin));
   // console.log(JSON.stringify(data));
   // location.href = "main.html";
 }
-
-// 접근 토큰으로 프로필 호출
-
 
 // 네이버 로그아웃
 // const naverLogout = document.getElementById('naverLogout');
@@ -163,3 +160,28 @@ function setLoginStatus(){
 //   naverLogin.logout();
 //   location.replace("http://127.0.0.1:5500");
 // });
+
+// 사용자 인증 요청
+function userAuth(){
+  let accessToken = naverLogin.accessToken.accessToken;
+
+  $.ajax({
+    type: "GET",
+    url: "http://15.165.102.73:8090/api/auth/"+accessToken,
+    secure: true,
+    cors: true,
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true
+    },
+    success: function(result) {
+      console.log(result);
+      const api_key = result.response.apiToken;
+      localStorage.setItem('api_key', api_key);
+    },
+    error: function(error){
+      console.log(error);
+    }
+  })
+}

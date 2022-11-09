@@ -33,16 +33,20 @@
           <input class="box" type="text" id="userId" value="" onchange="inputValueChange()" placeholder="아이디">
           <input class="box" type="password" id="userPw" value="" placeholder="비밀번호">
         </div> -->
-        <!-- <button class="btn-login" id="login" onclick="kakaoAuthUrl();">Kakao로 시작하기</button> -->
+
+        <!-- 네이버 로그인 -->
         <div class="login-box">
           <div id="message"></div>
           <div id="button-box">
             <div id="naverIdLogin"></div>
           </div>
         </div>
+
+        <button onclick="userAuth()">사용자 인증</button>
         <!-- <button onclick="logoutCheck();">로그아웃</button> -->
     </div>
   </div>
+  <!-- <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script> -->
   <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>

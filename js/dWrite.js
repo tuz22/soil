@@ -46,7 +46,8 @@ function diaryRegister() {
     data: JSON.stringify(newDiary),
     secure: true,
     headers: {
-      "X-Requested-With": "XMLHttpRequest"
+      // "X-Requested-With": "XMLHttpRequest",
+      "api_key" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaXNzIjoic29pbF9zZXJ2ZXIiLCJuYW1lIjoi67CV7Iq57KeAIiwiaWF0IjoxNjY3OTY5NTc1LCJ1c2VyS2V5IjoyLCJlbWFpbCI6InA0MTdzakBuYXZlci5jb20ifQ.QiB5fx4P2fjtkZrGWf1NXAbiW1lknUr63DzZZo_j8SYSM3Df7KhmMTWGJ-MOXZExdnx78UQQAgRm3KATx-WbRw"
     },
     success: function(result) {
       if (result == -1) {
