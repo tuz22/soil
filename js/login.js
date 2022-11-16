@@ -115,13 +115,11 @@ const naverLogin = new naver.LoginWithNaverId(
   }
 );
 naverLogin.init();
-console.log('a');
 
 // get로그인
 naverLogin.getLoginStatus(function (status) {
   console.log(JSON.stringify(status));
   if (status) {
-    console.log('b');
     const name = naverLogin.user.getName();
     const email = naverLogin.user.getEmail();
 
@@ -149,9 +147,16 @@ function setLoginStatus(){
   <div>user email : ${naverLogin.user.email}</div>
   `;
   console.log(JSON.stringify(naverLogin));
-  // console.log(JSON.stringify(data));
-  // location.href = "main.html";
 }
+
+// 로그인 버튼 유무
+const accessToken = naverLogin.accessToken
+if (accessToken) {
+  document.getElementById('login-box').style.display = 'none';
+  document.getElementById('join-caption').innerHTML = '';
+  userAuth()
+}
+
 
 // 네이버 로그아웃
 // const naverLogout = document.getElementById('naverLogout');
