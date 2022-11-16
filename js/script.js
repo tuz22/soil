@@ -179,6 +179,7 @@ function userAuth(){
       console.log(result);
       const api_key = result.response.apiToken;
       localStorage.setItem('api_key', api_key);
+      location.href="main.html"
     },
     error: function(error){
       console.log(error);

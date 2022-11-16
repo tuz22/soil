@@ -10,18 +10,20 @@ function updateDiary(diaryId) {
 
   $.ajax({
     type: "PATCH",
-    url: "http://15.165.102.73:8090/diaries/"+ diaryId,
+    url: "http://15.165.102.73:8090/api/diaries/"+ diaryId,
     dataType: "json",
     data: JSON.stringify(diaryData),
     contentType: "application/json",
     cors: true,
     secure: true,
     headers: {
-      "X-Requested-With": "XMLHttpRequest"
+      "X-Requested-With": "XMLHttpRequest",
+      // "api_key" : api_key
     },
     success: function(data) {
       console.log('수정 성공');
       console.log(JSON.stringify(data));
+      location.href="main.html";
     },
     error: function(error) {
       console.log(error);
@@ -40,44 +42,7 @@ document.getElementsByClassName('btn-update')[0].addEventListener('click', funct
   if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
     alert('수정이 완료됐어요.');
     updateDiary(diaryId);
-    location.href = "main.html";
   } else {
     alert('수정이 취소됐어요.');
   }
 })
-
-/* 회원 일기 삭제 */
-function deleteDiary(diaryId) {
-  $.ajax({
-    type: "DELETE",
-    url: "http://15.165.102.73:8090/diaries/"+ diaryId,
-    dataType: "json",
-    contentType: "application/json",
-    cors: true,
-    secure: true,
-    headers: {
-      "X-Requested-With": "XMLHttpRequest"
-    },
-    success: function() {
-      console.log('삭제 성공');
-    },
-    error: function(error) {
-      console.log(error);
-      alert('에러!');
-    }
-  })
-}
-
-document.getElementsByClassName('btn-delete')[0].addEventListener('click', function(){
-  let diaryId = document.getElementById('diaryId').value;
-  console.log("아이디"+diaryId);
-  const deleteMsg = confirm('해당 글을 삭제하겠습니까?');
-
-  if(deleteMsg == true){
-    alert('삭제');
-    deleteDiary(diaryId);
-    location.href = "main.html";
-  } else {
-    alert('삭제 취소');
-  }
-});

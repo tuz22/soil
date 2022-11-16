@@ -23,7 +23,7 @@ document.getElementsByClassName('btn-create')[0].addEventListener('click', funct
     diaryRegister();
     location.href = "main.html";
   } else {
-    alert('일기 저장안함');
+    alert('빈칸을 채워주세요.');
   }
 })
 
@@ -33,21 +33,19 @@ function diaryRegister() {
   let diaryTitle = document.getElementById('diaryTitle').value;
   let diaryPrice = document.getElementById('diaryPrice').value;
   let diaryContent = document.getElementById('diaryContent').value;
-  
-  let userId = 5;
-  
-  let newDiary = {"member_id": userId, "category_id": diaryCategory, "title": diaryTitle, "content": diaryContent, "price": diaryPrice};
 
+  let newDiary = {"category_id": diaryCategory, "title": diaryTitle, "content": diaryContent, "price": diaryPrice};
+  console.log('등록중!');
   $.ajax({
     type: "POST",
-    url: "http://15.165.102.73:8090/diaries",
+    url: "http://15.165.102.73:8090/api/diaries/upload",
     dataType: "json",
     contentType: "application/json",
     data: JSON.stringify(newDiary),
     secure: true,
     headers: {
       // "X-Requested-With": "XMLHttpRequest",
-      "api_key" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaXNzIjoic29pbF9zZXJ2ZXIiLCJuYW1lIjoi67CV7Iq57KeAIiwiaWF0IjoxNjY3OTY5NTc1LCJ1c2VyS2V5IjoyLCJlbWFpbCI6InA0MTdzakBuYXZlci5jb20ifQ.QiB5fx4P2fjtkZrGWf1NXAbiW1lknUr63DzZZo_j8SYSM3Df7KhmMTWGJ-MOXZExdnx78UQQAgRm3KATx-WbRw"
+      "api_key" : api_key
     },
     success: function(result) {
       if (result == -1) {
@@ -55,6 +53,7 @@ function diaryRegister() {
         return false;
       } else {
         alert('성공');
+        console.log(result);
 
       }
     },
