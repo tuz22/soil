@@ -417,7 +417,7 @@ table.board-write-header {
   align-items: center;
   padding: 1rem;
   border-bottom: 1em solid #f3f2f0;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .setting td {
   padding: 0.5rem;
@@ -434,7 +434,7 @@ table.board-write-header {
   height: 28px;
   border: 1.4px solid black;
   border-radius: 15%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .set-switch {
   width: 30%;
