@@ -1,7 +1,18 @@
-function btnPlus(e) {
-  e.classList.toggle("change");
-}
+// function btnPlus(e) {
+//   e.classList.toggle("change");
+// }
 
+for (let i= 0; i <2; i++) {
+  document.querySelectorAll('.set-btn')[i].addEventListener('click', function(e){
+    const btn = e.currentTarget;
+    if (btn.innerHTML == 'OFF') {
+      btn.innerHTML = 'ON'
+    } else {
+      btn.innerHTML = 'OFF'
+    }
+    btn.classList.toggle('set-btn-active')
+  })
+}
 
 function fontStyle(type) {
   const resultElement = document.getElementById('btnFontChange');
@@ -26,9 +37,9 @@ function count(type) {
   let fontSize = resultElement.innerText;
 
   if (type === 'plus') { 
-    fontSize = parseInt(fontSize) + 1;
+    fontSize = parseInt(fontSize) + 4;
   } else if (type === 'minus') {
-    fontSize = parseInt(fontSize) - 1;
+    fontSize = parseInt(fontSize) - 4;
   }
 
   resultElement.innerText = fontSize;

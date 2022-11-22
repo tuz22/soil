@@ -2,17 +2,17 @@ let api_key = localStorage.getItem('api_key');
 console.log(api_key)
 
 // 회원 일기 목록 조회  
-  function diaryIndex() {
+  function diaryIndex(numb) {
   $.ajax({
     type: "GET",
-    url: "http://15.165.102.73:8090/api/diaries/list",
+    url: "http://15.165.102.73:8090/api/diaries/list?limit=10&offset="+numb,
     dataType: "json",
     cors: true,
     contentType: "application/json",
     secure: true,
     headers: {
       "X-Requested-With": "XMLHttpRequest",
-      "api_key" : api_key
+      "api_key" : api_key,
     },
     success: function(data) {
       console.log(JSON.stringify(data));

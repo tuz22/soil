@@ -21,7 +21,8 @@ document.getElementsByClassName('btn-create')[0].addEventListener('click', funct
   if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
     alert('저장했어요.');
     diaryRegister();
-    location.href = "main.html";
+    console.log('저장')
+    // location.href = "main.html";
   } else {
     alert('빈칸을 채워주세요.');
   }
@@ -36,6 +37,7 @@ function diaryRegister() {
 
   let newDiary = {"category_id": diaryCategory, "title": diaryTitle, "content": diaryContent, "price": diaryPrice};
   console.log('등록중!');
+  console.log(newDiary)
   $.ajax({
     type: "POST",
     url: "http://15.165.102.73:8090/api/diaries/upload",
