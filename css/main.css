@@ -195,7 +195,10 @@ article {
 .diary-one {
   margin: 50px 0 0 0;
 }
-
+.setting {
+  margin: 50px 0 0 0;
+  background: none;
+}
 .nav-categories {
   position: fixed;
   display: flex;
@@ -229,11 +232,9 @@ table {
   border-collapse: collapse;
   border-radius: 0.5em;
   border-style: hidden;
-  box-shadow: 0 0 0 1px white;
+  /* box-shadow: 0 0 0 1px white; */
   background: white;
-  /* top: 70px; */
   width: 100%;
-  /* margin: 1em 0; */
 }
 .board thead td{
   padding: 1rem;
@@ -455,8 +456,8 @@ table.board-write-header {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1em solid #f3f2f0;
-  font-size: 1rem;
+  border-bottom: 2px solid rgba(32, 70, 48, 0.1);
+  font-size: 1.2rem;
 }
 .setting td {
   padding: 0.5rem;
