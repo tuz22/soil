@@ -108,6 +108,7 @@ if (accessToken) {
   document.getElementById('login-box').style.display = 'none';
   document.getElementById('join-caption').innerHTML = '';
   userAuth()
+  alert('로그인넘어감')
 }
 
 
@@ -122,7 +123,7 @@ if (accessToken) {
 // 사용자 인증 요청
 function userAuth(){
   let accessToken = naverLogin.accessToken.accessToken;
-
+  alert('토큰요청중');
   $.ajax({
     type: "GET",
     url: "http://15.165.102.73:8090/api/auth/"+accessToken,
@@ -135,6 +136,7 @@ function userAuth(){
     },
     success: function(result) {
       console.log(result);
+      alert(result)
       const api_key = result.response.apiToken;
       localStorage.setItem('api_key', api_key);
       location.href="main.html"

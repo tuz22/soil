@@ -88,6 +88,7 @@ setTimeout(() => {
     diaryTable[i].addEventListener('click', function(e){
       document.querySelector('.diary-index').classList.add('off');
       document.querySelector('.diary-read').classList.remove('off');
+      document.querySelector('footer').style.display = 'none'
       console.log(e.currentTarget)
       let diaryIdValue = diaryIds[i].value;
       console.log("id: "+diaryIdValue);
@@ -95,3 +96,7 @@ setTimeout(() => {
     });
     }
 }, 1000);
+
+/* 일기 더보기 버튼 */
+let diaryTable = document.getElementsByClassName('diary');
+

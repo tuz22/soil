@@ -22,7 +22,7 @@ document.getElementsByClassName('btn-create')[0].addEventListener('click', funct
     alert('저장했어요.');
     diaryRegister();
     console.log('저장')
-    // location.href = "main.html";
+    location.href = "main.html";
   } else {
     alert('빈칸을 채워주세요.');
   }
