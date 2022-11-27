@@ -2,7 +2,8 @@ const api_key = localStorage.getItem('api_key');
 const diaryTable = document.getElementsByClassName('diary');
 const diaryIds = document.getElementsByClassName('diary-id');
 const addBtn = document.querySelector('.add-btn');
-const numb = 0;
+let numb = 0;
+let limit = 10;
 
 // 회원 일기 목록 조회  
 function diaryIndex() {
@@ -10,7 +11,7 @@ console.log('목록조회!')
     console.log('numb = '+ numb)
   $.ajax({
     type: "GET",
-    url: "http://15.165.102.73:8090/api/diaries/list?limit=3&offset="+ numb,
+    url: "http://15.165.102.73:8090/api/diaries/list?limit="+limit+"&offset="+ numb,
     dataType: "json",
     cors: true,
     contentType: "application/json",
@@ -45,7 +46,7 @@ console.log('목록조회!')
         str += "</a>"
       });
       $('#tableDiary').append(str);
-      numb = numb + 3;
+      numb = numb + limit;
     },
     error: function(error){
       console.log(error);
@@ -103,7 +104,7 @@ function goReadDiary(){
       diaryTable[i].addEventListener('click', function(e){
         document.querySelector('.diary-index').classList.add('off');
         document.querySelector('.diary-read').classList.remove('off');
-        document.querySelector('footer').style.display = 'none'
+        document.querySelector('custom-footer').style.display = 'none'
         console.log(e.currentTarget)
         let diaryIdValue = diaryIds[i].value;
         console.log("id: "+diaryIdValue);
@@ -131,3 +132,47 @@ async function clickAddBtn(){
   console.log(diaryTable.length);
 }
 clickAddBtn();
+
+/* 스크롤시 add 버튼 on */
+function onAddBtn(){
+  const addBtn = document.querySelector('.add-btn');
+  let acc = 0.1;
+  let delayedYOffset = 0;
+  let rafId;
+  let rafState;
+
+  window.addEventListener('scroll', function(){
+    // console.log('scroll.....')
+
+    delayedYOffset = delayedYOffset + (pageYOffset - delayedYOffset) * acc;
+    console.log('delayedYOffset'+delayedYOffset)
+    console.log('pageYOffset'+pageYOffset)
+
+    if (!rafState) {
+      rafId = requestAnimationFrame(onAdd);
+      // addBtn.classList.remove('off');
+      rafState = true;
+    }
+  });
+
+  function onAdd(){
+    delayedYOffset = delayedYOffset + (pageYOffset - delayedYOffset) * acc;
+    addBtn.style.height = `${delayedYOffset}px`;
+
+    rafId = requestAnimationFrame(onAdd);
+
+    // ofAdd
+    if (Math.abs(pageYOffset - delayedYOffset) < 1) {
+      cancelAnimationFrame(rafId);
+      // addBtn.classList.add('off');
+      rafState = false;
+    }
+
+    if ((pageYOffset - delayedYOffset) < 0) {
+      addBtn.classList.add('off');
+    } else {
+      addBtn.classList.remove('off');
+    }
+  }
+}
+onAddBtn();

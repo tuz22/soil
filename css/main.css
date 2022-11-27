@@ -8,6 +8,7 @@ body {
   overflow-x: hidden;
   color: black;
   background: #f3f2f0;
+  /* height: 100vh; */
 }
 a {
   text-decoration: none;
@@ -190,7 +191,11 @@ article {
   margin: 10px 0;
 }
 .diary-index {
-  margin: 20px 0 40px 0;
+  margin: 40px 0 40px 0;
+  overflow-y: scroll;
+}
+.diary-table {
+  margin-bottom: 50px;
 }
 .diary-one {
   margin: 50px 0 0 0;
@@ -610,13 +615,15 @@ div.margin {
   justify-content: center;
 }
 .add-btn {
+  max-height: 29px;
   background: #204630;
   color: white;
-  opacity: 80%;
-  padding: 3px 10px;
+  /* opacity: 0%; */
+  padding: 0 10px;
+  margin: 10px;
   border-radius: 10px;
   position: fixed;
-  bottom: 7%;
+  bottom: 6%;
   z-index: 10;
 }
 .add-btn:hover {

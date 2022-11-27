@@ -14,7 +14,7 @@
     <h1 class="diary-logo"><a href=index.html>소비일기</a></h1>
   </header>
   <section class="diary-index">
-    <div class="container diary-index" id="tableDiary">
+    <div class="diary-table" id="tableDiary">
     <!-- <table class="diary" onclick="location.href='diary_read.html'">
       <thead>
         <tr>
@@ -42,17 +42,9 @@
     </div>
   </section>
   <div class="add-btn-box">
-    <button onclick="diaryIndex()" class="add-btn">더보기</button>
+    <button onclick="diaryIndex()" class="add-btn off">더보기</button>
   </div>
-  <footer>
-    <nav class="nav-categories">
-      <a href="main.html" class="nav-item"><img class="menu-icon" src="img/money-box-64.png" alt="diary"></a>
-      <a href="board.html" class="nav-item"><img class="menu-icon" src="img/search-60.png" alt="board"></a>
-      <a href="setting.html" class="nav-item"><img class="menu-icon" src="img/settings-64.png" alt="setting"></a>
-    </nav>
-    <button class="btn-menu write" onclick="location.href='diary_write.html';"><img class="write-icon" src="img/edit-52.png" alt="write"></button>
-    <!-- <button class="btn-menu write" onclick="kko();"><img class="write-icon" src="img/edit-52.png" alt="write"></button> -->
-  </footer>
+  <custom-footer></custom-footer>
   <!-- 일기 조회 -->
   <div class="container diary-read off" id="tableDiary">
     <header>
@@ -96,6 +88,7 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js" integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
+  <script src="js/footer.js"></script>
   <script src="js/diary.js"></script>
   <script src="js/dUpdate.js"></script>
   <script src="js/dDelete.js"></script>
