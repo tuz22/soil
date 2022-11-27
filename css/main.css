@@ -267,7 +267,8 @@ table.diary {
   margin: 1em 0;
 }
 .diary thead td {
-  padding: 1rem;
+  width: 3rem;
+  padding: 1rem 0 1rem 1rem;
   align-items: center;
 }
 .diary thead .list {
@@ -280,7 +281,7 @@ table.diary {
   display: none;
 }
 .diary tbody {
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0;
   width: 100%;
   overflow: hidden;
 }
