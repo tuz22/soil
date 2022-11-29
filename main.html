@@ -13,7 +13,16 @@
   <header>
     <h1 class="diary-logo"><a href=index.html>소비일기</a></h1>
   </header>
-  <section class="diary-index">
+  <!-- 검색 -->
+    <div class="search-form off">
+      <ul>
+        <li><h1>
+          <div class="back search-back"><</div>
+        </h1></li>
+        <li class="search-input"><input type="text" placeholder="검색"></li>
+      </ul>
+    </div>
+  <section class="diary-index ">
     <div class="diary-table" id="tableDiary">
     <!-- <table class="diary" onclick="location.href='diary_read.html'">
       <thead>
@@ -44,7 +53,6 @@
   <div class="add-btn-box">
     <button onclick="diaryIndex()" class="add-btn off">더보기</button>
   </div>
-  <custom-footer></custom-footer>
   <!-- 일기 조회 -->
   <div class="container diary-read off" id="tableDiary">
     <header>
@@ -86,11 +94,13 @@
       </table>
     </article>
   </div>
+  <custom-footer></custom-footer>
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js" integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
   <script src="js/footer.js"></script>
   <script src="js/diary.js"></script>
   <script src="js/dUpdate.js"></script>
   <script src="js/dDelete.js"></script>
+  <script src="js/search.js"></script>
 </body>
 </html>

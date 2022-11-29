@@ -229,7 +229,7 @@ article {
   background: #204630;
 }
 .off {
-  display: none;
+  display: none !important;
 }
 table {
   position: relative;
@@ -629,4 +629,45 @@ div.margin {
 .add-btn:hover {
   background: #449666;
   opacity: 100;
+}
+
+/* 파일업로드 */
+.file-upload-btn {
+  width: 90px;
+}
+
+/* 일기 검색 */
+.search-form {
+  display: flex;
+  position: fixed;
+  margin: 50px 0 20px 0;
+  width: 100%;
+  justify-content: center;
+}
+.search-form .back {
+  margin-left: 10px;
+}
+.search-form ul {
+  position: relative;
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+.search-form .search-input {
+  width: 100%;
+}
+.search-form input {
+  width: 90%;
+  height: 100%;
+  border: none;
+  padding: 0 10px 0 10px;
+  margin: 0 10px 10px 10px
+}
+.search-form input::before {
+  width: 1px;
+  height: 10px;
+  margin: 0px 12px;
+  background-color: rgb(204, 204, 204);
+  display: inline-block;
+  content: "";
 }
