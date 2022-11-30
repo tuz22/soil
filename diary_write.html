@@ -10,6 +10,7 @@
 </head>
 <body>
   <!-- 일기 작성 -->
+  <form id="fileForm ">
   <div class="container">
     <header>
       <h1 class="diary-write-back"><a href='javascript:history.back()'><div class="back write-history-back"><</div></a></h1>
@@ -19,7 +20,8 @@
         <thead>
           <td class="list">카테고리:</td>
           <td>
-            <select name="categories" id="diaryCategory">
+            <!-- <select name="categories" id="diaryCategory"> -->
+            <select name="category_id" id="diaryCategory">
               <option value="0">카테고리를 선택하세요.</option>
               <option value="1">food</option>
               <option value="2">의류</option>
@@ -27,33 +29,42 @@
               <option value="4">카테고리4</option>
             </select>
           </td>
-          <tr>
-            <td class="list">구매항목:</td>
-            <td><input type="text" id="diaryTitle" value=""></td>
-          </tr>
-          <tr>
-            <td class="list">가격:</td>
-            <td><input type="text" id="diaryPrice" value=""></td>
-          </tr>
-        </thead>
-      </table>
-    </section>
-    <article>
-      <table class="diary-write">
-        <tbody>
-          <td class="btn-box" id="">
-            <button class="btn-create">등록하기</button>
-            <span class="date" id="date">2022.08.25</span>
-          </td>
-          <tr>
-            <td class="content"><textarea name="diaryContent" id="diaryContent" value="" placeholder="무엇이든 기록을 해보자."></textarea></td>
-          </tr>
-        </tbody>
-        <tfoot>
-        </tfoot>
-      </table>
-    </article>
-  </div>
+          <td>
+            <!-- 파일업로드 -->
+              <input type="file" name="file" id="file" class="file-upload-btn" multiple/>
+              <!-- <input type="submit" value="등록하기"> -->
+              <!-- <button type="button" onclick="submitFiles()">submit</button> -->
+            </td>
+            <tr>
+              <td class="list">구매항목:</td>
+              <td><input type="text" id="diaryTitle" name="title" value=""></td>
+            </tr>
+            <tr>
+              <td class="list">가격:</td>
+              <td><input type="text" id="diaryPrice" name="price" value=""></td>
+            </tr>
+          </thead>
+        </table>
+      </section>
+      <article>
+        <table class="diary-write">
+          <tbody>
+            <td class="btn-box" id="">
+              <span class="date" id="date">2022.08.25</span>
+              <!-- <button class="btn-create">등록하기</button> -->
+              <input type="submit" class="btn-create" value="등록하기">
+            </td>
+            <tr>
+              <!-- <td class="content"><textarea name="diaryContent" id="diaryContent" value="" placeholder="무엇이든 기록을 해보자."></textarea></td> -->
+              <td class="content"><textarea name="content" id="diaryContent" value="" placeholder="무엇이든 기록을 해보자."></textarea></td>
+            </tr>
+          </tbody>
+          <tfoot>
+          </tfoot>
+        </table>
+      </article>
+    </div>
+  </form>
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
   <script src="js/dWrite.js"></script>
   <script src="js/diary.js"></script>

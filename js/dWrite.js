@@ -19,8 +19,8 @@ document.getElementsByClassName('btn-create')[0].addEventListener('click', funct
   
   // alert(diaryCategory + diaryTitle + diaryPrice + diaryContent);
   if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
-    alert('저장했어요.');
     diaryRegister();
+    alert('저장했어요.');
     console.log('저장')
     location.href = "main.html";
   } else {
@@ -35,18 +35,36 @@ function diaryRegister() {
   let diaryPrice = document.getElementById('diaryPrice').value;
   let diaryContent = document.getElementById('diaryContent').value;
 
-  let newDiary = {"category_id": diaryCategory, "title": diaryTitle, "content": diaryContent, "price": diaryPrice};
+  let formData = new FormData();
+  let file = document.getElementById("file");
+
+  formData.append("file", file.files[0]);
+  formData.append("category_id", diaryCategory);
+  formData.append("title", diaryTitle);
+  formData.append("content", diaryContent);
+  formData.append("price", diaryPrice);
+
   console.log('등록중!');
-  console.log(newDiary)
+  // console.log(newDiary);
+  let entries = formData.entries();
+  for (const pair of entries) {
+    console.log(pair[0] + ',' + pair[1]);
+  }
+
+
   $.ajax({
     type: "POST",
     url: "http://15.165.102.73:8090/api/diaries/upload",
-    dataType: "json",
-    contentType: "application/json",
-    data: JSON.stringify(newDiary),
+    // dataType: "HTML",
+    // mimetype:"multipart/form-data",
+    // contentType: "multipart/form-data;charset=UTF-8",
+    contentType: false,
+    processData: false,
+    enctype: "multipart/form-data",
+    data: formData,
     secure: true,
     headers: {
-      // "X-Requested-With": "XMLHttpRequest",
+      "X-Requested-With": "XMLHttpRequest",
       "api_key" : api_key
     },
     success: function(result) {
