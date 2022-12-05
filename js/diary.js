@@ -7,8 +7,8 @@ let limit = 10;
 
 // 회원 일기 목록 조회  
 function diaryIndex() {
-console.log('목록조회!')
-    console.log('numb = '+ numb)
+  console.log('목록조회!')
+  console.log('numb = '+ numb)
   $.ajax({
     type: "GET",
     url: "http://15.165.102.73:8090/api/diaries/list?limit="+limit+"&offset="+ numb,
@@ -47,6 +47,7 @@ console.log('목록조회!')
       });
       $('#tableDiary').append(str);
       numb = numb + limit;
+      clickAddBtn();
     },
     error: function(error){
       console.log(error);
@@ -79,6 +80,7 @@ function readDiary(diaryId) {
       document.querySelector('#diaryPrice').value = dData.price;
       document.querySelector('#date').innerHTML = dData.createAt.substr(0,10);
       document.querySelector('#diaryContent').innerHTML = dData.content;
+      document.querySelector('#getImg').src = dData.photoUrl;
     },
     error: function(error) {
       console.log(error);
@@ -131,7 +133,7 @@ async function clickAddBtn(){
   await addBtnPromise;
   console.log(diaryTable.length);
 }
-clickAddBtn();
+
 
 /* 스크롤시 add 버튼 on */
 function onAddBtn(){

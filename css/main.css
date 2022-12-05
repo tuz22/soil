@@ -373,6 +373,10 @@ table.diary-write-header {
   padding: 1rem;
   padding-bottom: 0;
 }
+.img-frame {
+  width: 100px;
+  /* height: 100px; */
+}
 .diary-write tbody .content {
   position: fixed;
   width: -webkit-fill-available;

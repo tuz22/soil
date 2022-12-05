@@ -21,8 +21,7 @@ document.getElementsByClassName('btn-create')[0].addEventListener('click', funct
   if (diaryTitle != "" && diaryPrice != "" && diaryContent != "") {
     diaryRegister();
     alert('저장했어요.');
-    console.log('저장')
-    location.href = "main.html";
+    console.log('저장');
   } else {
     alert('빈칸을 채워주세요.');
   }
@@ -43,14 +42,12 @@ function diaryRegister() {
   formData.append("title", diaryTitle);
   formData.append("content", diaryContent);
   formData.append("price", diaryPrice);
-
+  
   console.log('등록중!');
-  // console.log(newDiary);
   let entries = formData.entries();
   for (const pair of entries) {
     console.log(pair[0] + ',' + pair[1]);
   }
-
 
   $.ajax({
     type: "POST",
@@ -74,6 +71,7 @@ function diaryRegister() {
       } else {
         alert('성공');
         console.log(result);
+        location.href="main.html";
 
       }
     },
@@ -83,3 +81,24 @@ function diaryRegister() {
     }
   })
 }
+
+/* 업로드 파일 미리보기 */
+const file = document.getElementById("file");
+file.addEventListener('change', function(e){
+  const targetFile = e.target.files[0];
+  const reader = new FileReader();
+  reader.readAsDataURL(targetFile);
+
+  reader.onload = function(){
+    // const imgFrame = document.creatElement("div");
+    const imgFrame = document.getElementById('imgFrame');
+    imgFrame.style = `background : url(${reader.result}); backgroun-size : cover;`;
+    imgFrame.className = 'imgFrame';
+    document.getElementById('fileImg').appendChild(imgFrame);
+    // e.target.value = "";
+
+    imgFrame.addEventListener('click', function(){
+      document.getElementById('fileImg').removeChild(imgFrame);
+    })
+  }
+})

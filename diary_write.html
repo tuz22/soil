@@ -18,26 +18,31 @@
     <section class="diary-one">
       <table class="diary-write-header">
         <thead>
-          <td class="list">카테고리:</td>
-          <td>
-            <!-- <select name="categories" id="diaryCategory"> -->
-            <select name="category_id" id="diaryCategory">
-              <option value="0">카테고리를 선택하세요.</option>
-              <option value="1">food</option>
-              <option value="2">의류</option>
-              <option value="3">카테고리3</option>
-              <option value="4">카테고리4</option>
-            </select>
-          </td>
-          <td>
-            <!-- 파일업로드 -->
-              <input type="file" name="file" id="file" class="file-upload-btn" multiple/>
-              <!-- <input type="submit" value="등록하기"> -->
-              <!-- <button type="button" onclick="submitFiles()">submit</button> -->
+          <tr>
+            <td class="list">카테고리:</td>
+            <td>
+              <!-- <select name="categories" id="diaryCategory"> -->
+              <select name="category_id" id="diaryCategory">
+                <option value="0">카테고리를 선택하세요.</option>
+                <option value="1">food</option>
+                <option value="2">의류</option>
+                <option value="3">카테고리3</option>
+                <option value="4">카테고리4</option>
+              </select>
             </td>
+            <td>
+              <!-- 파일업로드 -->
+              <input type="file" name="file" id="file" class="file-upload-btn" multiple/>
+            </td>
+          </tr>
             <tr>
               <td class="list">구매항목:</td>
               <td><input type="text" id="diaryTitle" name="title" value=""></td>
+              <td>
+                <div id="fileImg">
+                  <div id="imgFrame" class="img-frame">.</div>
+                </div>
+              </td>
             </tr>
             <tr>
               <td class="list">가격:</td>
