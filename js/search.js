@@ -1,8 +1,20 @@
+
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('change', function(){
+  console.log('서치클릭!')
+  console.log(searchInput.value);
+})
+
+
+
 /* 일기 검색 */
 function searchDiary() {
+  // 검색어
+  const keyword = document.getElementById('searchInput').value;
+  console.log(keyword)
   $.ajax({
     type: "GET",
-    url: "http://15.165.102.73:8090/api/diaries/search?keyword="+ keyword,
+    url: "http://15.165.102.73:8090/api/diaries/search?keyword="+ keyword + "&limit=10",
     dataType: "json",
     contentType: "application/json",
     cors: true,
@@ -21,6 +33,8 @@ function searchDiary() {
   })
 }
 
+
+/* 검색페이지 전환 */
 function searchOn() {
   const diaryIndex = document.querySelector('.diary-index');
   const searchBtn = document.getElementById('searchBtn');

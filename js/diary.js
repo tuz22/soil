@@ -134,7 +134,6 @@ async function clickAddBtn(){
   console.log(diaryTable.length);
 }
 
-
 /* 스크롤시 add 버튼 on */
 function onAddBtn(){
   const addBtn = document.querySelector('.add-btn');

@@ -659,9 +659,10 @@ div.margin {
 }
 .search-form .search-input {
   width: 100%;
+  display: flex;
 }
 .search-form input {
-  width: 90%;
+  width: 75%;
   height: 100%;
   border: none;
   padding: 0 10px 0 10px;
@@ -674,4 +675,9 @@ div.margin {
   background-color: rgb(204, 204, 204);
   display: inline-block;
   content: "";
+}
+.search-form button {
+  background: url('../img/search-60.png') center center / 100% no-repeat;
+  color: transparent;
+  opacity: 70%;
 }

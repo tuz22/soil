@@ -28,6 +28,7 @@ document.getElementsByClassName('btn-create')[0].addEventListener('click', funct
 })
 
 /* 새 일기 등록 */
+
 function diaryRegister() {
   let diaryCategory = document.getElementById('diaryCategory').value;
   let diaryTitle = document.getElementById('diaryTitle').value;
@@ -37,7 +38,10 @@ function diaryRegister() {
   let formData = new FormData();
   let file = document.getElementById("file");
 
-  formData.append("file", file.files[0]);
+  if (file.files.length == 1) {
+    formData.append("file", file.files[0]);
+  }
+  
   formData.append("category_id", diaryCategory);
   formData.append("title", diaryTitle);
   formData.append("content", diaryContent);
