@@ -63,7 +63,7 @@ window.addEventListener('load', () => {
 const naverLogin = new naver.LoginWithNaverId(
   {
     clientId: "LlL6YMWLhYjoND1QFApp",
-    callbackUrl: "http://127.0.0.1:5500",
+    callbackUrl: "https://tuz22.github.io/soil/",
     loginButton: {color: "green", type: 3, height: 40}
   }
 );
