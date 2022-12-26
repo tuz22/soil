@@ -3,6 +3,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/default.css">
@@ -31,32 +32,7 @@
       <!-- <h3>d</h3> -->
     </div>
   <section class="diary-index ">
-    <div class="diary-table" id="tableDiary">
-    <!-- <table class="diary" onclick="location.href='diary_read.html'">
-      <thead>
-        <tr>
-          <td id="diaryNumb">번호</td>
-          <td>|</td>
-          <td class="diary-id" id="diaryId" value="a">a</td>
-          <td><input class="diary-id" value="d"></td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="diaryTitle"><h3>글제목</h3></td>
-        </tr>
-        <tr>
-          <td class="content" id="diaryContent">글내용</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td class="diary-date" id="diaryDate">날짜</td>
-        </tr>
-      </tfoot>
-    </table> -->
-    <!-- <button onclick="diaryIndex(0)" class="add-btn">더보기</button> -->
-    </div>
+    <div class="diary-table" id="tableDiary"></div>
   </section>
   <div class="add-btn-box">
     <button onclick="diaryIndex()" class="add-btn off">더보기</button>
