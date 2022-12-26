@@ -692,3 +692,6 @@ div.margin {
 .search-form article {
   display: block;
 }
+#searchCountBox {
+  text-align: center;
+}

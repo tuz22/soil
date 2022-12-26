@@ -25,19 +25,13 @@ function searchDiary() {
       success: function(data) {
         console.log('성공');
         let str = "";
-        // let searchCount = "검색결과 : <span id='searchCount'>" + data.response.count + "</span>건";
-        // let searchCount = "검색결과 : " + data.response.count + "건"
-        let searchCount = data.response.count
+        let searchCount = `검색결과 : ${data.response.count}건`
         $('#searchResult').empty();
         $('#searchCountBox').empty();
         
         console.log(JSON.stringify(data));
         if (searchCount !== 0){
           let diaryData = data.response.diaryList;
-          console.log(diaryData)
-          console.log('검색결과 : '+ data.response.count+'건')
-          console.log('카테고리:'+diaryData[0].category.name)
-          console.log('확인용:'+diaryData[0].title)
           $.each(diaryData, function(i){
             // str += "<table class='diary' onclick='location.href=`diary_read.html`'>"
             str += "<table class='diary' onclick='goSearchDiary()'>"
