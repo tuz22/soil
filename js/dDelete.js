@@ -24,7 +24,6 @@ function deleteDiary(diaryId) {
 
 document.getElementsByClassName('btn-delete')[0].addEventListener('click', function(){
   let diaryId = document.getElementById('diaryId').value;
-  console.log("아이디"+diaryId);
   const deleteMsg = confirm('해당 글을 삭제하겠습니까?');
 
   if(deleteMsg == true){

@@ -21,14 +21,11 @@ function diaryIndex() {
       "api_key" : api_key,
     },
     success: function(data) {
-      console.log(JSON.stringify(data));
+      // console.log(JSON.stringify(data));
 
       let diaryData = data.response.diaryList;
-      console.log(diaryData)
-      // console.log(diaryData[1].id)
       let str = "";
       $.each(diaryData, function(i){
-        // str += "<table class='diary' onclick='location.href=`diary_read.html`'>"
         str += "<table class='diary'>"
         str += "  <thead>"
         str += "    <tr>"
@@ -69,8 +66,7 @@ function readDiary(diaryId) {
       "api_key" : api_key
     },
     success: function(data) {
-      console.log('성공');
-      console.log(JSON.stringify(data));
+      // console.log(JSON.stringify(data));
       
       let dData = data.response;
 
@@ -90,30 +86,23 @@ function readDiary(diaryId) {
 }
 
 setTimeout(() => {
-  
   goReadDiary();
-  console.log('처음에만 되나?')
-  console.log(diaryTable.length);
 }, 100);
 
 function goReadDiary(){
-  console.log(diaryTable.length);
   
   setTimeout(() => {
-    console.log('setTimeout!')
+    // console.log('setTimeout!')
     for (let i = 0; i < diaryTable.length; i++ ) {
     
       diaryTable[i].addEventListener('click', function(e){
         document.querySelector('.diary-index').classList.add('off');
         document.querySelector('.diary-read').classList.remove('off');
         document.querySelector('custom-footer').style.display = 'none'
-        console.log(e.currentTarget)
         let diaryIdValue = diaryIds[i].value;
-        console.log("id: "+diaryIdValue);
         readDiary(diaryIdValue);
       });
     }
-    console.log('반복문 다 돌았음!')
 
   }, 100);
 }
@@ -122,13 +111,11 @@ function goReadDiary(){
 const back = document.querySelector('.read-history-back');
 back.addEventListener('click', function(){
   const searchForm = document.querySelector('.search-form');
-  const diaryRead = document.querySelector('.diary-read')
-  const diaryIndex = document.querySelector('.diary-index')
+  const diaryRead = document.querySelector('.diary-read');
+  const diaryIndex = document.querySelector('.diary-index');
   const writeBtn = document.querySelector('.btn-menu.write');
-  const footer = document.querySelector('custom-footer')
-  // history.back();
-  console.log('뒤로가기')
-  alert('뒤로가기')
+  const footer = document.querySelector('custom-footer');
+
   if (searchCountBox.innerHTML !== ''){
     diaryRead.classList.add('off');
     searchForm.classList.remove('off');
@@ -147,13 +134,10 @@ async function clickAddBtn(){
     
     addBtn.addEventListener('click', function(){
       success(goReadDiary());
-      console.log(diaryTable.length);
-      console.log('됏다!');
     })
   
   });
   await addBtnPromise;
-  console.log(diaryTable.length);
 }
 
 /* 스크롤시 add 버튼 on */
@@ -165,15 +149,11 @@ function onAddBtn(){
   let rafState;
 
   window.addEventListener('scroll', function(){
-    // console.log('scroll.....')
 
     delayedYOffset = delayedYOffset + (pageYOffset - delayedYOffset) * acc;
-    console.log('delayedYOffset'+delayedYOffset)
-    console.log('pageYOffset'+pageYOffset)
 
     if (!rafState) {
       rafId = requestAnimationFrame(onAdd);
-      // addBtn.classList.remove('off');
       rafState = true;
     }
   });
@@ -187,7 +167,6 @@ function onAddBtn(){
     // ofAdd
     if (Math.abs(pageYOffset - delayedYOffset) < 1) {
       cancelAnimationFrame(rafId);
-      // addBtn.classList.add('off');
       rafState = false;
     }
 

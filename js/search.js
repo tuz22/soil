@@ -1,7 +1,6 @@
 
 const searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('change', function(){
-  console.log('서치클릭!')
   console.log('키워드:'+searchInput.value);
 })
 
@@ -10,7 +9,6 @@ function searchDiary() {
   // 검색어
   const keyword = document.getElementById('searchInput').value;
   if (keyword !=='') {
-    console.log(keyword)
     $.ajax({
       type: "GET",
       url: "https://www.soildiary.net/api/diaries/search?keyword="+ keyword,
@@ -93,13 +91,13 @@ searchOn()
 function goSearchDiary(){
   const diaryRead = document.querySelector('.diary-read')
   const searchForm = document.querySelector('.search-form')
+  
   for (let i = 0; i < diaryTable.length; i++ ) {
     diaryTable[i].addEventListener('click', function(e){
+      let diaryIdValue = diaryIds[i].value;
       searchForm.classList.add('off');
       diaryRead.classList.remove('off');
-      console.log(e.currentTarget)
-      let diaryIdValue = diaryIds[i].value;
-      console.log("id: "+diaryIdValue);
+      
       readDiary(diaryIdValue);
     });
   }

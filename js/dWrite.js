@@ -96,7 +96,6 @@ file.addEventListener('change', function(e){
     imgFrame.style = `background : url(${reader.result}); backgroun-size : cover;`;
     imgFrame.className = 'imgFrame';
     document.getElementById('fileImg').appendChild(imgFrame);
-    // e.target.value = "";
 
     imgFrame.addEventListener('click', function(){
       document.getElementById('fileImg').removeChild(imgFrame);

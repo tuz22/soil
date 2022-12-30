@@ -6,8 +6,6 @@ function updateDiary(diaryId) {
   let diaryContent = document.querySelector('#diaryContent').value;
   let diaryData = {"category_id":diaryCategory, "title": diaryTitle , "price": diaryPrice, "content": diaryContent};
 
-  console.log(diaryData);
-
   $.ajax({
     type: "PATCH",
     url: "https://www.soildiary.net/api/diaries/"+ diaryId,
@@ -21,8 +19,6 @@ function updateDiary(diaryId) {
       // "api_key" : api_key
     },
     success: function(data) {
-      console.log('수정 성공');
-      console.log(JSON.stringify(data));
       location.href="main.html";
     },
     error: function(error) {

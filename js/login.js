@@ -71,15 +71,14 @@ naverLogin.init();
 
 // get로그인
 naverLogin.getLoginStatus(function (status) {
-  console.log(JSON.stringify(status));
   if (status) {
     const name = naverLogin.user.getName();
     const email = naverLogin.user.getEmail();
 
-    if(name === null||name === undefined ){
+    if(name === null || name === undefined ){
       alert("이름이 필요합니다. 정보제공을 동의해주세요.");
       naverLogin.reprompt();
-      if(email === null||email === undefined ){
+      if(email === null || email === undefined ){
         alert("이메일이 필요합니다. 정보제공을 동의해주세요.");
         naverLogin.reprompt();
       }
@@ -89,7 +88,6 @@ naverLogin.getLoginStatus(function (status) {
     }
   }
 });
-console.log(naverLogin);
 
 // set로그인
 function setLoginStatus(){
@@ -99,7 +97,7 @@ function setLoginStatus(){
   <div>user name : ${naverLogin.user.name}</div>
   <div>user email : ${naverLogin.user.email}</div>
   `;
-  console.log(JSON.stringify(naverLogin));
+  // console.log(JSON.stringify(naverLogin));
 }
 
 // 로그인 버튼 유무
@@ -108,7 +106,6 @@ if (accessToken) {
   document.getElementById('login-box').style.display = 'none';
   document.getElementById('join-caption').innerHTML = '';
   userAuth()
-  alert('로그인넘어감')
 }
 
 
@@ -135,8 +132,6 @@ function userAuth(){
       "Access-Control-Allow-Credentials": true
     },
     success: function(result) {
-      console.log(result);
-      alert(result)
       const api_key = result.response.apiToken;
       localStorage.setItem('api_key', api_key);
       location.href="main.html"
