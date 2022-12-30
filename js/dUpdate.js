@@ -10,7 +10,7 @@ function updateDiary(diaryId) {
 
   $.ajax({
     type: "PATCH",
-    url: "http://15.165.102.73:8090/api/diaries/"+ diaryId,
+    url: "https://www.soildiary.net/api/diaries/"+ diaryId,
     dataType: "json",
     data: JSON.stringify(diaryData),
     contentType: "application/json",

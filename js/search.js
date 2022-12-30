@@ -13,7 +13,7 @@ function searchDiary() {
     console.log(keyword)
     $.ajax({
       type: "GET",
-      url: "http://15.165.102.73:8090/api/diaries/search?keyword="+ keyword,
+      url: "https://www.soildiary.net/api/diaries/search?keyword="+ keyword,
       dataType: "json",
       contentType: "application/json",
       cors: true,

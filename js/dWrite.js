@@ -55,10 +55,7 @@ function diaryRegister() {
 
   $.ajax({
     type: "POST",
-    url: "http://15.165.102.73:8090/api/diaries/upload",
-    // dataType: "HTML",
-    // mimetype:"multipart/form-data",
-    // contentType: "multipart/form-data;charset=UTF-8",
+    url: "https://www.soildiary.net/api/diaries/upload",
     contentType: false,
     processData: false,
     enctype: "multipart/form-data",
