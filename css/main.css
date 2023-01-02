@@ -327,6 +327,7 @@ table.diary-write-header {
 }
 .diary-write-header thead .list {
   text-align: right;
+  word-break: keep-all;
 }
 .diary-write-header thead :not(.list) {
   padding-right: 0;
@@ -386,7 +387,7 @@ table.diary-write-header {
   background: white;
 }
 .diary-write textarea {
-  width: 98%;
+  width: 88%;
   height: 90%;
   border: none;
   resize: none;
