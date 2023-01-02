@@ -26,7 +26,7 @@ function diaryIndex() {
       let diaryData = data.response.diaryList;
       let str = "";
       $.each(diaryData, function(i){
-        str += "<table class='diary'>"
+        str += "<table class='diary' onclick='goReadDiary()'>"
         str += "  <thead>"
         str += "    <tr>"
         str += "      <td id='diaryNumb'>" + diaryData[i].category.name
@@ -85,9 +85,9 @@ function readDiary(diaryId) {
   })
 }
 
-setTimeout(() => {
-  goReadDiary();
-}, 100);
+// setTimeout(() => {
+//   goReadDiary();
+// }, 100);
 
 function goReadDiary(){
   
