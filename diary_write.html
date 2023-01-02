@@ -31,17 +31,17 @@
               </select>
             </td>
             <!-- 파일업로드 -->
-            <!-- <td>
+            <td>
               <input type="file" name="file" id="file" class="file-upload-btn" multiple/>
-            </td> -->
+            </td>
           </tr>
             <tr>
               <td class="list">구매항목:</td>
               <td><input type="text" id="diaryTitle" name="title" value=""></td>
               <td>
-                <div id="fileImg">
+                <!-- <div id="fileImg">
                   <div id="imgFrame" class="img-frame">.</div>
-                </div>
+                </div> -->
               </td>
             </tr>
             <tr>
@@ -55,12 +55,24 @@
         <table class="diary-write">
           <tbody>
             <td class="btn-box" id="">
-              <span class="date" id="date">2022.08.25</span>
-              <input type="submit" class="btn-create" value="등록하기">
+              <span class="date" id="date"></span>
+              <label for="file">
+                <span class="file-upload-label">사진선택</span>
+              </label>
+              <input type="file" name="file" id="file" class="file-upload-btn" multiple/>
+              <label for="submit">
+                <span class="submit-label">등록하기</span>
+              </label>
+              <input type="submit" class="btn-create" id="submit" value="등록하기">
             </td>
             <tr>
-              <!-- <td class="content"><textarea name="diaryContent" id="diaryContent" value="" placeholder="무엇이든 기록을 해보자."></textarea></td> -->
-              <td class="content"><textarea name="content" id="diaryContent" value="" placeholder="무엇이든 기록을 해보자."></textarea></td>
+              <td class="content">
+                <div id="fileImg">
+                  <!-- <div id="imgFrame" class="img-frame">.</div> -->
+                  <img src="" id="imgFrames" style="width: 100%">
+                </div>
+                <textarea name="content" id="diaryContent" value="" placeholder="무엇이든 기록을 해보자."></textarea>
+              </td>
             </tr>
           </tbody>
           <tfoot>

@@ -91,14 +91,14 @@ file.addEventListener('change', function(e){
   reader.readAsDataURL(targetFile);
 
   reader.onload = function(){
-    // const imgFrame = document.creatElement("div");
+    document.getElementById('imgFrames').src = reader.result
     const imgFrame = document.getElementById('imgFrame');
-    imgFrame.style = `background : url(${reader.result}); backgroun-size : cover;`;
-    imgFrame.className = 'imgFrame';
-    document.getElementById('fileImg').appendChild(imgFrame);
+    // imgFrame.style = `background : url(${reader.result}); background-size : cover`;
+    // imgFrame.className = 'imgFrame';
+    // document.getElementById('fileImg').appendChild(imgFrame);
 
-    imgFrame.addEventListener('click', function(){
-      document.getElementById('fileImg').removeChild(imgFrame);
-    })
+    // imgFrame.addEventListener('click', function(){
+    //   document.getElementById('fileImg').removeChild(imgFrame);
+    // })
   }
 })

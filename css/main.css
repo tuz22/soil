@@ -245,9 +245,9 @@ table {
   padding: 1rem;
   padding-bottom: 0;
 }
-.btn-box {
+.diary-write tbody .btn-box {
   text-align: right;
-  padding: 0.5 1rem;
+  padding: 0.5rem 20px;
 }
 .date {
   padding: 0 0.5rem;
@@ -638,8 +638,26 @@ div.margin {
 }
 
 /* 파일업로드 */
-.file-upload-btn {
-  width: 90px;
+.file-upload-label, .submit-label {
+  /* width: 75px;
+  height: 28px; */
+  border: 2px solid #f3f2f0;
+  border-radius: 15%;
+  font-size: 1.2rem;
+  padding: 3px;
+}
+.file-upload-label:hover {
+  background: #204630;
+  color: white;
+  opacity: 80%;
+}
+.submit-label:hover {
+  background: #449666;
+  color: white;
+  opacity: 100;
+}
+#file, #submit {
+  display: none;
 }
 
 /* 일기 검색 */
