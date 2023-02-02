@@ -1,5 +1,6 @@
 /* 회원탈퇴 */
 function removeUser() {
+  const api_key = localStorage.getItem('api_key')
   $.ajax({
     type: "DELETE",
     url: "https://www.soildiary.net/api/users/remove",
