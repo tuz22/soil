@@ -108,15 +108,6 @@ if (accessToken) {
   userAuth()
 }
 
-
-// 네이버 로그아웃
-// const naverLogout = document.getElementById('naverLogout');
-
-// naverLogout.addEventListener('click', function(){
-//   naverLogin.logout();
-//   location.replace("http://127.0.0.1:5500");
-// });
-
 // 사용자 인증 요청
 function userAuth(){
   let accessToken = naverLogin.accessToken.accessToken;

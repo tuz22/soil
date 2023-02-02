@@ -2,8 +2,8 @@
 //   e.classList.toggle("change");
 // }
 
-for (let i= 0; i <2; i++) {
-  document.querySelectorAll('.set-btn')[i].addEventListener('click', function(e){
+// for (let i= 0; i <2; i++) {
+  document.getElementsByClassName('set-darkmode')[0].addEventListener('click', function(e){
     const btn = e.currentTarget;
     if (btn.innerHTML == 'OFF') {
       btn.innerHTML = 'ON'
@@ -12,7 +12,7 @@ for (let i= 0; i <2; i++) {
     }
     btn.classList.toggle('set-btn-active')
   })
-}
+// }
 
 function fontStyle(type) {
   const resultElement = document.getElementById('btnFontChange');

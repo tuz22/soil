@@ -16,14 +16,14 @@
     </header>
     <section>
       <table class="setting" border="1">
-        <!-- <tr>
+        <tr>
           <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
           <td class="set-tab">|</td>
           <td class="set-title">사용자</td>
           <td class="set-switch">
-            <button id="naverLogout" class="set-btn">로그아웃</button>
+            <button id="naverLogout" class="set-btn set-logout" onclick="logout()">로그아웃</button>
           </td>
-        </tr> -->
+        </tr>
         <tr>
           <td class="set-icon"><img src="img/add-font-60.png" alt=""></td>
           <td class="set-tab">|</td>
@@ -53,7 +53,7 @@
           <td class="set-tab">|</td>
           <td class="set-title">다크 모드</td>
           <td class="set-switch">
-            <button id="set-darkmode" class="set-btn">OFF</button>
+            <button id="set-darkmode" class="set-btn set-darkmode">OFF</button>
           </td>
         </tr>
         <tr>
@@ -85,8 +85,12 @@
           <td class="set-title">앱 평가하기</td>
         </tr>
       </table>
+      <div class="set-remove">
+        <button>앱 탈퇴하기</button>
+      </div>
     </section>
   </div>
   <script src="js/setting.js"></script>
+  <script src="js/logout.js"></script>
 </body>
 </html>

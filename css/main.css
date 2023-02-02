@@ -492,6 +492,11 @@ table.board-write-header {
   color: white;
   opacity: 80%;
 }
+.set-btn:hover {
+  background: #204630;
+  color: white;
+  opacity: 80%;
+}
 .set-switch {
   width: 30%;
   vertical-align: middle;
@@ -504,12 +509,22 @@ table.board-write-header {
 .setting .btn-set div {
   padding: 0 1rem;
 }
-
 .setting .btn-count {
   border: none;
   background: none;
   font-weight: bold;
 }
+.set-remove {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-bottom: none;
+}
+.set-remove button {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 footer {
   position: fixed;
   bottom: 1rem;
