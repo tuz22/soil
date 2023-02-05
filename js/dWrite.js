@@ -42,7 +42,7 @@ function diaryRegister() {
     formData.append("file", file.files[0]);
   }
   
-  formData.append("category_id", diaryCategory);
+  formData.append("categoryId", diaryCategory);
   formData.append("title", diaryTitle);
   formData.append("content", diaryContent);
   formData.append("price", diaryPrice);
