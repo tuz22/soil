@@ -4,7 +4,7 @@ function updateDiary(diaryId) {
   let diaryTitle = document.querySelector('#diaryTitle').value;
   let diaryPrice = document.querySelector('#diaryPrice').value;
   let diaryContent = document.querySelector('#diaryContent').value;
-  let diaryData = {"category_id":diaryCategory, "title": diaryTitle , "price": diaryPrice, "content": diaryContent};
+  let diaryData = {"categoryId":diaryCategory, "title": diaryTitle , "price": diaryPrice, "content": diaryContent};
 
   $.ajax({
     type: "PATCH",
