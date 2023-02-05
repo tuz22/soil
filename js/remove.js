@@ -24,7 +24,6 @@ function removeUser() {
 }
 
 document.getElementById('removeUser').addEventListener('click', function(){
-  console.log('클릭되나')
   const deleteMsg = confirm('해당 앱을 탈퇴하시겠습니까?');
 
   if(deleteMsg == true){
