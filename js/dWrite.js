@@ -78,7 +78,7 @@ function diaryRegister() {
     },
     error: function(error) {
       console.log(error);
-      console.log(JSON.stringify(data))
+      console.log(JSON.stringify(error))
       alert('에러!');
     }
   })
