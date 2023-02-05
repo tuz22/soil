@@ -108,27 +108,24 @@ function goReadDiary(){
 }
 
 /* 뒤로가기 화살표 */
-function clickBackBtn(){
-  const back = document.querySelector('.read-history-back');
+const back = document.querySelector('.read-history-back');
+back.addEventListener('click', function(){
   const searchForm = document.querySelector('.search-form');
   const diaryRead = document.querySelector('.diary-read');
   const diaryIndex = document.querySelector('.diary-index');
   const writeBtn = document.querySelector('.btn-menu.write');
   const footer = document.querySelector('custom-footer');
-  
-  back.addEventListener('click', function(){
-    if (searchCountBox.innerHTML !== ''){
-      diaryRead.classList.add('off');
-      searchForm.classList.remove('off');
-    } else {
-      diaryRead.classList.add('off');
-      diaryIndex.classList.remove('off');
-      writeBtn.classList.remove('off');
-      footer.style.display = 'flex'
-    }
-  })
-}
-clickBackBtn();
+
+  if (searchCountBox.innerHTML !== ''){
+    diaryRead.classList.add('off');
+    searchForm.classList.remove('off');
+  } else {
+    diaryRead.classList.add('off');
+    diaryIndex.classList.remove('off');
+    writeBtn.classList.remove('off');
+    footer.style.display = 'flex'
+  }
+})
 
 /* 회원 일기 추가 조회 : add 버튼 */
 
