@@ -30,7 +30,7 @@ function createCategory() {
   const categoryInput = document.getElementById('categoryInput').value
   console.log(categoryInput)
   const categoryName = {"categoryName" : categoryInput};
-  
+
   $.ajax({
     type: "POST",
     url: "https://www.soildiary.net/api/category/add",
