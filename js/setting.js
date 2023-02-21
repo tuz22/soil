@@ -44,3 +44,8 @@ function count(type) {
 
   resultElement.innerText = fontSize;
 }
+
+// 카테고리 설정으로 이동
+function goCategories(){
+  location.href="setting_categories.html";
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- 카테고리 설정 -->
+  <div class="container">
+    <header>
+      <h1><a href=javascript:history.back()><div class="back">< 카테고리 설정</div></a></h1>
+    </header>
+    <section>
+      <table class="setting" border="1">
+        <tr>
+          <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
+          <td class="set-tab">|</td>
+          <td class="set-title">카테고리 설정</td>
+          <td class="set-switch">
+            <button id="naverLogout" class="set-btn set-logout">설정하기</button>
+            <button onclick="categoryList()">전체 카테고리 조회</button>
+          </td>
+        </tr>
+    </section>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script src="js/categories.js"></script>
+</body>
+</html>
