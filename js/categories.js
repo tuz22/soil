@@ -56,13 +56,40 @@ function createCategory() {
 
 /* 카테고리 수정 */
 function updateCategory() {
-  const categoryInput = document.getElementById('categoryInput').value
-  console.log(categoryInput)
-  const categoryData = {"newName": "string","originName": "string"};
+  const categoryName = document.getElementById('categoryName').value
+  const categoryNewName = document.getElementById('categoryNewName').value
+  const categoryData = {"newName": categoryNewName,"originName": categoryName};
 
   $.ajax({
     type: "POST",
     url: "https://www.soildiary.net/api/category/update",
+    dataType: "json",
+    contentType: "application/json",
+    data: JSON.stringify(categoryData),
+    cors: true,
+    secure: true,
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+      "api_key" : api_key,
+    },
+    success: function(data) {
+      console.log(data)
+      console.log(JSON.stringify(data))
+    },
+    error: function(error) {
+      console.log(error);
+    }
+  });
+}
+
+/* 카테고리 삭제 */
+function deleteCategory() {
+  const categoryDelete = document.getElementById('categoryDelete').value
+  const categoryData = {"categoryName": categoryDelete};
+
+  $.ajax({
+    type: "POST",
+    url: "https://www.soildiary.net/api/category/remove",
     dataType: "json",
     contentType: "application/json",
     data: JSON.stringify(categoryData),
