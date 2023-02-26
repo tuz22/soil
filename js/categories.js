@@ -1,4 +1,5 @@
 const api_key = localStorage.getItem('api_key');
+const categoryTable = document.getElementById('settingCategory');
 
 /* 전체 카테고리 조회  */
 function categoryList() {
@@ -17,6 +18,20 @@ function categoryList() {
     success: function(data) {
       console.log(data)
       console.log(JSON.stringify(data))
+      const data = data.response.categoryList
+      let str = "";
+      $.each(data, function(i) {
+        str += "<tr>"
+        str += "  <td class='category-box'>"
+        str += `    <div class='name'>${data[i].name}</div>`
+        str += "    <div class='btn-set'>"
+        str += `      <button id=${data[i].id} class='btn-update'></button>`
+        str += `      <button id=${data[i].id} class='btn-delete'></button>`
+        str += "    </div>"
+        str += "  </td>"
+        str += "</tr>"
+      });
+      $('#settingCategory').append(str)
     },
     error: function(error) {
       console.log(error);
@@ -108,3 +123,8 @@ function deleteCategory() {
     }
   });
 }
+
+const updateBtn = document.querySelectorAll('.btn-update')[0];
+updateBtn.addEventListener('click',function(e){
+  console.log(e.target.id)
+})

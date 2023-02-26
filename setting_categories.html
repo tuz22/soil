@@ -8,50 +8,27 @@
   <link rel="stylesheet" href="css/default.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body onload="categoryList()">
   <!-- 카테고리 설정 -->
   <div class="container">
     <header>
       <h1><a href=javascript:history.back()><div class="back">< 카테고리 설정</div></a></h1>
     </header>
     <section>
-      <table class="setting" border="1">
-        <tr>
-          <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-          <td class="set-tab">|</td>
-          <td class="set-title">카테고리 설정</td>
-          <td class="set-switch">
-            <button class="set-btn" onclick="categoryList()">전체 카테고리 조회</button>
+      <table id="settingCategory" class="setting-category" border="1">
+        <!-- <tr>
+          <td class="category-box">
+            <div class="name">
+              카테고리명
+            </div>
+            <div class="btn-set">
+              <button id="1" class="btn-update"></button>
+              <button id="" class="btn-delete"></button>
+            </div>
           </td>
-        </tr>
-        <tr>
-          <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-          <td class="set-tab">|</td>
-          <td class="set-title">카테고리 등록</td>
-          <td class="set-switch">
-            <input type="text" id="categoryInput" value="">
-            <button class="set-btn" onclick="createCategory()">등록하기</button>
-          </td>
-        </tr>
-        <tr>
-          <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-          <td class="set-tab">|</td>
-          <td class="set-title">카테고리 수정</td>
-          <td class="set-switch">
-            <input type="text" id="categoryName" value="">
-            <input type="text" id="categoryNewName" value="">
-            <button class="set-btn" onclick="updateCategory()">수정하기</button>
-          </td>
-        </tr>
-        <tr>
-          <td class="set-icon"><img src="img/profile-64.png" alt=""></td>
-          <td class="set-tab">|</td>
-          <td class="set-title">카테고리 삭제</td>
-          <td class="set-switch">
-            <input type="text" id="categoryDelete" value="">
-            <button class="set-btn" onclick="deleteCategory()">삭제하기</button>
-          </td>
-        </tr>
+          <td class="category-box">카테고리 설정</td>
+        </tr> -->
+      </table>
     </section>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
