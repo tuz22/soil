@@ -1,6 +1,9 @@
 const api_key = localStorage.getItem('api_key');
 const categoryTable = document.getElementById('settingCategory');
 
+
+document.onload = categoryList();
+
 /* 전체 카테고리 조회  */
 function categoryList() {
 
