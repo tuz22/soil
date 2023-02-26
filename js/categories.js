@@ -26,7 +26,7 @@ function categoryList() {
         str += "<tr>"
         str += "  <td class='category-box'>"
         str += `    <div class='name'>`
-        str += `      <input id='categoryName' class='category-input' type='text' value=${categoryData[i].name}`
+        str += `      <input id='categoryName' class='category-input' type='text' value=${categoryData[i].name} readonly>`
         str += `      <input id='categoryNewName' class='category-input' type='text' placeholder='-> 변경할 카테고리명을 입력하세요.'>`
         str += "    </div>"
         str += "    <div class='btn-set'>"
@@ -67,6 +67,8 @@ function createCategory() {
     success: function(data) {
       console.log(data)
       console.log(JSON.stringify(data))
+      alert('카테고리 등록 성공')
+      categoryInput.value=''
     },
     error: function(error) {
       console.log(error);
