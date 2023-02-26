@@ -61,7 +61,7 @@ function updateCategory() {
   const categoryData = {"newName": categoryNewName,"originName": categoryName};
 
   $.ajax({
-    type: "POST",
+    type: "PATCH",
     url: "https://www.soildiary.net/api/category/update",
     dataType: "json",
     contentType: "application/json",
@@ -88,7 +88,7 @@ function deleteCategory() {
   const categoryData = {"name": categoryDelete};
 
   $.ajax({
-    type: "POST",
+    type: "DELETE",
     url: "https://www.soildiary.net/api/category/remove",
     dataType: "json",
     contentType: "application/json",
