@@ -22,13 +22,13 @@ function categoryList() {
       console.log(JSON.stringify(data))
       const categoryData = data.response.categoryList
       let str = "";
-      $.each(data, function(i) {
+      $.each(categoryData, function(i) {
         str += "<tr>"
         str += "  <td class='category-box'>"
         str += `    <div class='name'>${categoryData[i].name}</div>`
         str += "    <div class='btn-set'>"
-        str += `      <button id=${categoryData[i].id} class='btn-update'></button>`
-        str += `      <button id=${categoryData[i].id} class='btn-delete'></button>`
+        str += `      <button id=${categoryData[i].name} class='btn-update'></button>`
+        str += `      <button id=${categoryData[i].name} class='btn-delete'></button>`
         str += "    </div>"
         str += "  </td>"
         str += "</tr>"
