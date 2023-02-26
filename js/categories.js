@@ -125,8 +125,3 @@ function deleteCategory() {
     }
   });
 }
-
-const updateBtn = document.querySelectorAll('.btn-update')[0];
-updateBtn.addEventListener('click',function(e){
-  console.log(e.target.id)
-})
