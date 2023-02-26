@@ -28,7 +28,7 @@ function categoryList() {
 /* 카테고리 등록 */
 function createCategory() {
   const categoryInput = document.getElementById('categoryInput').value
-  const categoryName = {"categoryName" : categoryInput};
+  const categoryName = {"name" : categoryInput};
   console.log(categoryInput)
   console.log(categoryName)
 
@@ -85,7 +85,7 @@ function updateCategory() {
 /* 카테고리 삭제 */
 function deleteCategory() {
   const categoryDelete = document.getElementById('categoryDelete').value
-  const categoryData = {"categoryName": categoryDelete};
+  const categoryData = {"name": categoryDelete};
 
   $.ajax({
     type: "POST",
