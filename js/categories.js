@@ -27,13 +27,10 @@ function categoryList() {
         str += "  <td class='category-box'>"
         str += `    <div class='name'>`
         str += `      <input id='categoryName' class='category-input' type='text' value=${categoryData[i].name}`
-        str += `      <div class='off'>`
-        str += `        <input id='categoryNewName' class='category-input' type='text' placeholder='변경할 카테고리명을 입력하세요.'><button>수정</button>`
-        str += `        <button id=${categoryData[i].name} class='' onClick='updateCategory()'></button>`
-        str += "      </div>"
+        str += `      <input id='categoryNewName' class='category-input' type='text' placeholder='-> 변경할 카테고리명을 입력하세요.'>`
         str += "    </div>"
         str += "    <div class='btn-set'>"
-        str += `      <button id=${categoryData[i].name} class='btn-update' onClick='onUpdateInput()'></button>`
+        str += `      <button id=${categoryData[i].name} class='btn-update' onClick='updateCategory()'></button>`
         str += `      <button id=${categoryData[i].name} class='btn-delete' onClick='deleteCategory()'></button>`
         str += "    </div>"
         str += "  </td>"
@@ -78,10 +75,6 @@ function createCategory() {
 }
 
 /* 카테고리 수정 */
-function onUpdateInput() {
-  const updateInput = document.querySelectorAll('.off')
-  updateInput.classList.add('on');
-}
 
 function updateCategory() {
   const updateInput = document.querySelectorAll('.off')

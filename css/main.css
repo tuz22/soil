@@ -762,6 +762,9 @@ div.margin {
 .setting-category .btn-delete {
   background: url('../img/delete-60.png') center center / 100% no-repeat;;
 }
+.setting-category .btn-register {
+  background: url('../img/add-60.png') center center / 100% no-repeat;;
+}
 .setting-category .btn-count {
   border: none;
   background: none;
