@@ -773,7 +773,7 @@ div.margin {
 }
 .category-box {
   display: flex;
-  flex: 0.5;
+  flex: 1;
   justify-content: space-between;
   align-items: center;
   text-align: center;
@@ -782,6 +782,16 @@ div.margin {
   margin: 5px;
   padding: 10px;
 }
-.category-box input::placeholder {
-  border: none !important
+.category-input {
+  border: none;
+  /* border-bottom: 1px solid #204630; */
+  background: transparent;
+  min-width: 200px;
+}
+.on {
+  display: block;
+  border-bottom: 1px solid #204630;
+}
+.off {
+  display: none;
 }

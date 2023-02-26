@@ -25,10 +25,16 @@ function categoryList() {
       $.each(categoryData, function(i) {
         str += "<tr>"
         str += "  <td class='category-box'>"
-        str += `    <div class='name'>${categoryData[i].name}</div>`
+        str += `    <div class='name'>`
+        str += `      <input id='categoryName' class='category-input' type='text' value=${categoryData[i].name}`
+        str += `      <div class='off'>`
+        str += `        <input id='categoryNewName' class='category-input' type='text' placeholder='변경할 카테고리명을 입력하세요.'><button>수정</button>`
+        str += `        <button id=${categoryData[i].name} class='' onClick='updateCategory()'></button>`
+        str += "      </div>"
+        str += "    </div>"
         str += "    <div class='btn-set'>"
-        str += `      <button id=${categoryData[i].name} class='btn-update'></button>`
-        str += `      <button id=${categoryData[i].name} class='btn-delete'></button>`
+        str += `      <button id=${categoryData[i].name} class='btn-update' onClick='onUpdateInput()'></button>`
+        str += `      <button id=${categoryData[i].name} class='btn-delete' onClick='deleteCategory()'></button>`
         str += "    </div>"
         str += "  </td>"
         str += "</tr>"
@@ -72,7 +78,13 @@ function createCategory() {
 }
 
 /* 카테고리 수정 */
+function onUpdateInput() {
+  const updateInput = document.querySelectorAll('.off')
+  updateInput.classList.add('on');
+}
+
 function updateCategory() {
+  const updateInput = document.querySelectorAll('.off')
   const categoryName = document.getElementById('categoryName').value
   const categoryNewName = document.getElementById('categoryNewName').value
   const categoryData = {"newName": categoryNewName,"originName": categoryName};
@@ -92,6 +104,7 @@ function updateCategory() {
     success: function(data) {
       console.log(data)
       console.log(JSON.stringify(data))
+      updateInput.classList.remove('on');
     },
     error: function(error) {
       console.log(error);
@@ -101,8 +114,8 @@ function updateCategory() {
 
 /* 카테고리 삭제 */
 function deleteCategory() {
-  const categoryDelete = document.getElementById('categoryDelete').value
-  const categoryData = {"name": categoryDelete};
+  const categoryName = document.getElementById('categoryName').value
+  const categoryData = {"name": categoryName};
 
   $.ajax({
     type: "DELETE",
