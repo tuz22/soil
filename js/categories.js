@@ -68,7 +68,7 @@ function createCategory() {
       console.log(data)
       console.log(JSON.stringify(data))
       alert('카테고리 등록 성공')
-      categoryInput.value=''
+      categoryInput.value=null
     },
     error: function(error) {
       console.log(error);
@@ -99,7 +99,6 @@ function updateCategory() {
     success: function(data) {
       console.log(data)
       console.log(JSON.stringify(data))
-      updateInput.classList.remove('on');
     },
     error: function(error) {
       console.log(error);
