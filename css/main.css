@@ -737,6 +737,7 @@ div.margin {
 }
 .setting-category tr {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 1rem;
   /* border-bottom: 2px solid rgba(32, 70, 48, 0.1); */
@@ -744,7 +745,8 @@ div.margin {
 }
 .setting-category .name {
   display:flex;
-  justify-content: center;
+  /* justify-content: center; */
+  width: 100%;
 }
 .setting-category .btn-set {
   display: flex;
@@ -774,9 +776,15 @@ div.margin {
   position: relative;
   bottom: 19rem;
 }
+.category-menu {
+  font-size: 14px;
+  font-weight: 600;
+  flex: 1;
+  word-break: keep-all;
+  min-width: 85px;
+}
 .category-box {
   display: flex;
-  flex: 1;
   justify-content: space-between;
   align-items: center;
   text-align: center;
@@ -785,11 +793,24 @@ div.margin {
   margin: 5px;
   padding: 10px;
 }
+.category-box.create {
+  flex: 4;
+  /* margin: 5px 5px 5px 4px; */
+}
+.category-box.update {
+  flex: 2;
+}
+.category-box.update.new-category {
+}
 .category-input {
   border: none;
-  /* border-bottom: 1px solid #204630; */
   background: transparent;
-  min-width: 200px;
+  width: 100%;
+  /* border-bottom: 1px solid #204630; */
+  /* min-width: 200px; */
+}
+.category-input .update {
+
 }
 .on {
   display: block;

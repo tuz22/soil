@@ -19,12 +19,43 @@
       </table>
       <table id="settingCategory" class="setting-category" border="1">
       <tr>
-        <td class="category-box">
+        <td class="category-menu">카테고리 추가</td>
+        <td class="category-box create">
           <div class="name">
-            <input class="category-input" id="categoryInput" type="text" placeholder="추가할 카테고리 명을 입력하세요.">
+            <input class="category-input" id="categoryInput" type="text" placeholder="추가할 카테고리 입력">
           </div>
           <div class="btn-set">
             <button id="1" class="btn-register" onClick="createCategory()"></button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="category-menu">카테고리 수정</td>
+        <td class="category-box update">
+          <div class="name">
+            <input class="category-input" id="categoryName" type="text" placeholder="카테고리 선택">
+          </div>
+          <div class="btn-set">
+            <button id="1" class="btn-register" style="visibility: hidden;"></button>
+          </div>
+        </td>
+        <td class="category-box update new-category">
+          <div class="name">
+            <input class="category-input" id="categoryNewName" type="text" placeholder="수정할 카테고리 입력">
+          </div>
+          <div class="btn-set">
+            <button id="2" class="btn-register" onClick="updateCategory()"></button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="category-menu">카테고리 삭제</td>
+        <td class="category-box create">
+          <div class="name">
+            <input class="category-input" id="categoryDelName" type="text" placeholder="삭제할 카테고리 입력">
+          </div>
+          <div class="btn-set">
+            <button id="3" class="btn-register" onClick="deleteCategory()"></button>
           </div>
         </td>
       </tr>

@@ -83,7 +83,7 @@ function updateCategory() {
   const categoryName = document.getElementById('categoryName').value
   const categoryNewName = document.getElementById('categoryNewName').value
   const categoryData = {"newName": categoryNewName,"originName": categoryName};
-
+  console.log(categoryData)
   $.ajax({
     type: "PATCH",
     url: "https://www.soildiary.net/api/category/update",
@@ -107,30 +107,29 @@ function updateCategory() {
 }
 
 /* 카테고리 삭제 */
-function deleteCategory(e) {
+function deleteCategory() {
 
-  console.log(e.target)
-  // const categoryName = document.getElementById('categoryName').value
-  // const categoryData = {"name": categoryName};
-
-  // $.ajax({
-  //   type: "DELETE",
-  //   url: "https://www.soildiary.net/api/category/remove",
-  //   dataType: "json",
-  //   contentType: "application/json",
-  //   data: JSON.stringify(categoryData),
-  //   cors: true,
-  //   secure: true,
-  //   headers: {
-  //     "X-Requested-With": "XMLHttpRequest",
-  //     "api_key" : api_key,
-  //   },
-  //   success: function(data) {
-  //     console.log(data)
-  //     console.log(JSON.stringify(data))
-  //   },
-  //   error: function(error) {
-  //     console.log(error);
-  //   }
-  // });
+  const categoryDelName = document.getElementById('categoryDelName').value
+  const categoryData = {"name": categoryDelName};
+  console.log(categoryData)
+  $.ajax({
+    type: "DELETE",
+    url: "https://www.soildiary.net/api/category/remove",
+    dataType: "json",
+    contentType: "application/json",
+    data: JSON.stringify(categoryData),
+    cors: true,
+    secure: true,
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+      "api_key" : api_key,
+    },
+    success: function(data) {
+      console.log(data)
+      console.log(JSON.stringify(data))
+    },
+    error: function(error) {
+      console.log(error);
+    }
+  });
 }
