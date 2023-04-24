@@ -50,7 +50,7 @@ function categoryList() {
       const categoryData = data.response.categoryList
       let str = "";
       $.each(categoryData, function(i) {
-        str += `<option value=${categoryData[i].name}>${categoryData[i].name}</option>`
+        str += `<option value=${categoryData[i].id} data-name=${categoryData[i].name}>${categoryData[i].name}</option>`
       });
       $('#diaryCategory').append(str)
     },
@@ -65,10 +65,15 @@ document.onload = categoryList();
 /* 새 일기 등록 */
 
 function diaryRegister() {
-  let diaryCategory = document.getElementById('diaryCategory').value;
-  let diaryTitle = document.getElementById('diaryTitle').value;
-  let diaryPrice = document.getElementById('diaryPrice').value;
-  let diaryContent = document.getElementById('diaryContent').value;
+  const selectElement = document.getElementById('diaryCategory');
+  const selectedOption = selectElement.options[selectElement.selectedIndex];
+
+  const categoryId = selectedOption.value;
+  const categoryName = selectedOption.dataset.name;
+
+  const diaryTitle = document.getElementById('diaryTitle').value;
+  const diaryPrice = document.getElementById('diaryPrice').value;
+  const diaryContent = document.getElementById('diaryContent').value;
 
   let formData = new FormData();
   let file = document.getElementById("file");
@@ -77,7 +82,8 @@ function diaryRegister() {
     formData.append("file", file.files[0]);
   }
   
-  formData.append("name", diaryCategory);
+  formData.append("categoryId", categoryId);
+  formData.append("categoryName", categoryName);
   formData.append("title", diaryTitle);
   formData.append("content", diaryContent);
   formData.append("price", diaryPrice);
