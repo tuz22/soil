@@ -77,7 +77,7 @@ function diaryRegister() {
     formData.append("file", file.files[0]);
   }
   
-  formData.append("categoryId", diaryCategory);
+  formData.append("name", diaryCategory);
   formData.append("title", diaryTitle);
   formData.append("content", diaryContent);
   formData.append("price", diaryPrice);
