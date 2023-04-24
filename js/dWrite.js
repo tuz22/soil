@@ -1,3 +1,5 @@
+const api_key = localStorage.getItem('api_key');
+
 /* 현재 날짜 */
 function today(){
   let today = new Date();
@@ -27,7 +29,6 @@ document.getElementsByClassName('btn-create')[0].addEventListener('click', funct
   }
 })
 
-document.onload = categoryList();
 
 /* 전체 카테고리 조회  */
 function categoryList() {
@@ -48,13 +49,13 @@ function categoryList() {
       // const categoryData = data.response.categoryList
       // let str = "";
       // $.each(categoryData, function(i) {
-      //   str += "<tr>"
-      //   str += "  <td class='category-box'>"
-      //   str += `    <div class='name'>`
-      //   str += `      <input id='categoryName' class='category-input' type='text' value=${categoryData[i].name} readonly>`
-      //   str += `      <input id='categoryNewName' class='category-input' type='text' placeholder='-> 변경할 카테고리명을 입력하세요.'>`
-      //   str += "    </div>"
-      //   str += "    <div class='btn-set'>"
+        //   str += "<tr>"
+        //   str += "  <td class='category-box'>"
+        //   str += `    <div class='name'>`
+        //   str += `      <input id='categoryName' class='category-input' type='text' value=${categoryData[i].name} readonly>`
+        //   str += `      <input id='categoryNewName' class='category-input' type='text' placeholder='-> 변경할 카테고리명을 입력하세요.'>`
+        //   str += "    </div>"
+        //   str += "    <div class='btn-set'>"
       //   str += `      <button id=${categoryData[i].name} class='btn-update' onClick='updateCategory()'></button>`
       //   str += `      <button id=${categoryData[i].name} class='btn-delete' onClick='deleteCategory()'></button>`
       //   str += "    </div>"
@@ -68,6 +69,8 @@ function categoryList() {
     }
   });
 }
+
+document.onload = categoryList();
 
 /* 새 일기 등록 */
 
