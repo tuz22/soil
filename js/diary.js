@@ -11,7 +11,7 @@ function diaryIndex() {
   console.log('numb = '+ numb)
   $.ajax({
     type: "GET",
-    url: "https://www.soildiary.net/api/diaries/list?limit="+limit+"&offset="+ numb,
+    url: "https://13.209.129.215.nip.io/api/diaries/list?limit="+limit+"&offset="+ numb,
     dataType: "json",
     cors: true,
     contentType: "application/json",
@@ -56,7 +56,7 @@ function diaryIndex() {
 function readDiary(diaryId) {
   $.ajax({
     type: "GET",
-    url: "https://www.soildiary.net/api/diaries/"+ diaryId,
+    url: "https://13.209.129.215.nip.io/api/diaries/"+ diaryId,
     dataType: "json",
     contentType: "application/json",
     cors: true,

@@ -55,7 +55,7 @@ function diaryRegister() {
 
   $.ajax({
     type: "POST",
-    url: "https://www.soildiary.net/api/diaries/upload",
+    url: "https://13.209.129.215.nip.io/api/diaries/upload",
     contentType: false,
     processData: false,
     enctype: "multipart/form-data",

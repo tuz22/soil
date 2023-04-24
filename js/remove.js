@@ -3,7 +3,7 @@ function removeUser() {
   const api_key = localStorage.getItem('api_key')
   $.ajax({
     type: "DELETE",
-    url: "https://www.soildiary.net/api/users/remove",
+    url: "https://13.209.129.215.nip.io/api/users/remove",
     dataType: "json",
     contentType: "application/json",
     cors: true,

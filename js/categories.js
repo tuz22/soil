@@ -8,7 +8,7 @@ document.onload = categoryList();
 function categoryList() {
   $.ajax({
     type: "GET",
-    url: "https://www.soildiary.net/api/category/categoryList",
+    url: "https://13.209.129.215.nip.io/api/category/categoryList",
     dataType: "json",
     contentType: "application/json",
     cors: true,
@@ -54,7 +54,7 @@ function createCategory() {
 
   $.ajax({
     type: "POST",
-    url: "https://www.soildiary.net/api/category/add",
+    url: "https://13.209.129.215.nip.io/api/category/add",
     dataType: "json",
     contentType: "application/json",
     data: JSON.stringify(categoryName),
@@ -86,7 +86,7 @@ function updateCategory() {
   console.log(categoryData)
   $.ajax({
     type: "PATCH",
-    url: "https://www.soildiary.net/api/category/update",
+    url: "https://13.209.129.215.nip.io/api/category/update",
     dataType: "json",
     contentType: "application/json",
     data: JSON.stringify(categoryData),
@@ -114,7 +114,7 @@ function deleteCategory() {
   console.log(categoryData)
   $.ajax({
     type: "DELETE",
-    url: "https://www.soildiary.net/api/category/remove",
+    url: "https://13.209.129.215.nip.io/api/category/remove",
     dataType: "json",
     contentType: "application/json",
     data: JSON.stringify(categoryData),

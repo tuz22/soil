@@ -2,7 +2,7 @@
 function deleteDiary(diaryId) {
   $.ajax({
     type: "DELETE",
-    url: "https://www.soildiary.net/api/diaries/"+ diaryId,
+    url: "https://13.209.129.215.nip.io/api/diaries/"+ diaryId,
     dataType: "json",
     contentType: "application/json",
     cors: true,

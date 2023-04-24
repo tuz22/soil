@@ -8,7 +8,7 @@ function updateDiary(diaryId) {
 
   $.ajax({
     type: "PATCH",
-    url: "https://www.soildiary.net/api/diaries/"+ diaryId,
+    url: "https://13.209.129.215.nip.io/api/diaries/"+ diaryId,
     dataType: "json",
     data: JSON.stringify(diaryData),
     contentType: "application/json",

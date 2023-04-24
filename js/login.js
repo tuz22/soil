@@ -114,7 +114,7 @@ function userAuth(){
   alert('토큰요청중');
   $.ajax({
     type: "GET",
-    url: "https://www.soildiary.net/api/auth/"+accessToken,
+    url: "https://13.209.129.215.nip.io/api/auth/"+accessToken,
     secure: true,
     cors: true,
     headers: {

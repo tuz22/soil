@@ -11,7 +11,7 @@ function searchDiary() {
   if (keyword !=='') {
     $.ajax({
       type: "GET",
-      url: "https://www.soildiary.net/api/diaries/search?keyword="+ keyword,
+      url: "https://13.209.129.215.nip.io/api/diaries/search?keyword="+ keyword,
       dataType: "json",
       contentType: "application/json",
       cors: true,
