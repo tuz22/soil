@@ -46,10 +46,11 @@ function categoryList() {
     success: function(data) {
       console.log(data)
       console.log(JSON.stringify(data))
-      const categoryData = data.response
+      // const categoryData = data.response
+      const categoryData = data.response.categoryList
       let str = "";
       $.each(categoryData, function(i) {
-        str += `<option value=${categoryData.categoryList[i].name}>${categoryData.categoryList[i].name}</option>`
+        str += `<option value=${categoryData[i].name}>${categoryData[i].name}</option>`
       });
       $('#diaryCategory').append(str)
     },
