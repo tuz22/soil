@@ -46,23 +46,12 @@ function categoryList() {
     success: function(data) {
       console.log(data)
       console.log(JSON.stringify(data))
-      // const categoryData = data.response.categoryList
-      // let str = "";
-      // $.each(categoryData, function(i) {
-        //   str += "<tr>"
-        //   str += "  <td class='category-box'>"
-        //   str += `    <div class='name'>`
-        //   str += `      <input id='categoryName' class='category-input' type='text' value=${categoryData[i].name} readonly>`
-        //   str += `      <input id='categoryNewName' class='category-input' type='text' placeholder='-> 변경할 카테고리명을 입력하세요.'>`
-        //   str += "    </div>"
-        //   str += "    <div class='btn-set'>"
-      //   str += `      <button id=${categoryData[i].name} class='btn-update' onClick='updateCategory()'></button>`
-      //   str += `      <button id=${categoryData[i].name} class='btn-delete' onClick='deleteCategory()'></button>`
-      //   str += "    </div>"
-      //   str += "  </td>"
-      //   str += "</tr>"
-      // });
-      // $('#settingCategory').append(str)
+      const categoryData = data.response
+      let str = "";
+      $.each(categoryData, function(i) {
+        str += `<option value=${categoryData.categoryList[i].name}>${categoryData.categoryList[i].name}</option>`
+      });
+      $('#diaryCategory').append(str)
     },
     error: function(error) {
       console.log(error);
