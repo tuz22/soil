@@ -6,6 +6,8 @@ function updateDiary(diaryId) {
   let diaryContent = document.querySelector('#diaryContent').value;
   let diaryData = {"categoryId":diaryCategory, "title": diaryTitle , "price": diaryPrice, "content": diaryContent};
 
+  console.log('diaryData: ', diaryData)
+
   $.ajax({
     type: "PATCH",
     url: "https://13.209.129.215.nip.io/api/diaries/"+ diaryId,
