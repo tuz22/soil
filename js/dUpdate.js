@@ -1,10 +1,10 @@
 /* 회원 일기 수정 */
 function updateDiary(diaryId) {
-  const diaryCategory = 1;
+  let diaryCategory = document.querySelector('#diaryCategory').value;
   let diaryTitle = document.querySelector('#diaryTitle').value;
   let diaryPrice = document.querySelector('#diaryPrice').value;
   let diaryContent = document.querySelector('#diaryContent').value;
-  let diaryData = {"name":diaryCategory, "title": diaryTitle , "price": diaryPrice, "content": diaryContent};
+  let diaryData = {"categoryId":diaryCategory, "title": diaryTitle , "price": diaryPrice, "content": diaryContent};
 
   $.ajax({
     type: "PATCH",
