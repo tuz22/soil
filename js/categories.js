@@ -108,9 +108,9 @@ function updateCategory() {
 
 /* 카테고리 삭제 */
 function deleteCategory() {
-
-  const categoryDelName = document.getElementById('categoryDelName').value
-  const categoryData = {"name": categoryDelName};
+  const categoryName = document.getElementById('categoryName').value
+  // const categoryDelName = document.getElementById('categoryDelName').value
+  const categoryData = {"name": categoryName};
   console.log(categoryData)
   $.ajax({
     type: "DELETE",
