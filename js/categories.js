@@ -26,12 +26,13 @@ function categoryList() {
         str += "<tr>"
         str += "  <td class='category-box'>"
         str += `    <div class='name'>`
-        str += `      <input id='categoryName' class='category-input' type='text' value=${categoryData[i].name} readonly>`
-        str += `      <input id='categoryNewName' class='category-input' type='text' placeholder='-> 변경할 카테고리명을 입력하세요.'>`
+        str += `      <input id='categoryName_${i}' class='category-input' type='text' value=${categoryData[i].name} readonly>`
+        str += `      <input id='categoryNewName_${i}' class='category-input' type='text' placeholder='-> 변경할 카테고리명을 입력하세요.'>`
         str += "    </div>"
         str += "    <div class='btn-set'>"
-        str += `      <button id=${categoryData[i].name} class='btn-update' onClick='updateCategory()'></button>`
-        str += `      <button id=${categoryData[i].name} class='btn-delete' onClick='deleteCategory()'></button>`
+        // str += `      <button id=${categoryData[i].name} class='btn-update' onClick='updateCategory()'></button>`
+        str += `      <button id='btnUpdate_${i}' class='btn-update' onClick='updateCategory()'></button>`
+        str += `      <button id='btnUpdate_${i}' class='btn-delete' onClick='deleteCategory()'></button>`
         str += "    </div>"
         str += "  </td>"
         str += "</tr>"
@@ -79,9 +80,10 @@ function createCategory() {
 /* 카테고리 수정 */
 
 function updateCategory() {
-  const updateInput = document.querySelectorAll('.off')
-  const categoryName = document.getElementById('categoryName').value
-  const categoryNewName = document.getElementById('categoryNewName').value
+  // const updateInput = document.querySelectorAll('.off')
+  const index = this.id.split('_')[1];
+  const categoryName = document.getElementById(`categoryName_${index}`).value;
+  const categoryNewName = document.getElementById(`categoryNewName_${index}`).value;
   const categoryData = {"newName": categoryNewName,"originName": categoryName};
   console.log(categoryData)
   $.ajax({
@@ -108,7 +110,8 @@ function updateCategory() {
 
 /* 카테고리 삭제 */
 function deleteCategory() {
-  const categoryName = document.getElementById('categoryName').value
+  const index = this.id.split('_')[1];
+  const categoryName = document.getElementById(`categoryName_${index}`).value;
   // const categoryDelName = document.getElementById('categoryDelName').value
   const categoryData = {"name": categoryName};
   console.log(categoryData)
