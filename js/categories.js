@@ -31,7 +31,7 @@ function categoryList() {
         str += "    </div>"
         str += "    <div class='btn-set'>"
         // str += `      <button id=${categoryData[i].name} class='btn-update' onClick='updateCategory()'></button>`
-        str += `      <button id='btnUpdate_${i}' class='btn-update' onClick='updateCategory(${categoryData[i].name},)'></button>`
+        str += `      <button id='btnUpdate_${i}' class='btn-update' onClick='updateCategory(${i})'></button>`
         str += `      <button id='btnUpdate_${i}' class='btn-delete' onClick='deleteCategory(${categoryData[i].name})'></button>`
         str += "    </div>"
         str += "  </td>"
@@ -79,10 +79,10 @@ function createCategory() {
 
 /* 카테고리 수정 */
 
-function updateCategory(categoryName) {
+function updateCategory(index) {
   // const updateInput = document.querySelectorAll('.off')
-  const index = categoryName.split('_')[1];
-  // const categoryName = document.getElementById(`categoryName_${index}`).value;
+  // const index = categoryName.split('_')[1];
+  const categoryName = document.getElementById(`categoryName_${index}`).value;
   const categoryNewName = document.getElementById(`categoryNewName_${index}`).value;
   const categoryData = {"newName": categoryNewName,"originName": categoryName};
   console.log(categoryData)
