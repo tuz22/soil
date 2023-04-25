@@ -71,6 +71,7 @@ function readDiary(diaryId) {
       let dData = data.response;
 
       document.querySelector('#diaryId').value = dData.id;
+      document.querySelectorAll('.list')[0].value = dData.category.id;
       document.querySelector('#diaryCategory').innerHTML = dData.category.name;
       document.querySelector('#diaryTitle').value = dData.title;
       document.querySelector('#diaryPrice').value = dData.price;

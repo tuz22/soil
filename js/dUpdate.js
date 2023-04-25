@@ -1,6 +1,7 @@
 /* 회원 일기 수정 */
 function updateDiary(diaryId) {
-  let diaryCategory = document.querySelector('#diaryCategory').value;
+  // let diaryCategory = document.querySelector('#diaryCategory').value;
+  let diaryCategory = document.querySelectorAll('.list')[0].value;
   let diaryTitle = document.querySelector('#diaryTitle').value;
   let diaryPrice = document.querySelector('#diaryPrice').value;
   let diaryContent = document.querySelector('#diaryContent').value;
