@@ -31,8 +31,8 @@ function categoryList() {
         str += "    </div>"
         str += "    <div class='btn-set'>"
         // str += `      <button id=${categoryData[i].name} class='btn-update' onClick='updateCategory()'></button>`
-        str += `      <button id='btnUpdate_${i}' class='btn-update' onClick='updateCategory()'></button>`
-        str += `      <button id='btnUpdate_${i}' class='btn-delete' onClick='deleteCategory()'></button>`
+        str += `      <button id='btnUpdate_${i}' class='btn-update' onClick='updateCategory(${categoryData[i].name},)'></button>`
+        str += `      <button id='btnUpdate_${i}' class='btn-delete' onClick='deleteCategory(${categoryData[i].name})'></button>`
         str += "    </div>"
         str += "  </td>"
         str += "</tr>"
@@ -79,10 +79,10 @@ function createCategory() {
 
 /* 카테고리 수정 */
 
-function updateCategory() {
+function updateCategory(categoryName) {
   // const updateInput = document.querySelectorAll('.off')
-  const index = this.id.split('_')[1];
-  const categoryName = document.getElementById(`categoryName_${index}`).value;
+  const index = categoryName.split('_')[1];
+  // const categoryName = document.getElementById(`categoryName_${index}`).value;
   const categoryNewName = document.getElementById(`categoryNewName_${index}`).value;
   const categoryData = {"newName": categoryNewName,"originName": categoryName};
   console.log(categoryData)
@@ -109,9 +109,9 @@ function updateCategory() {
 }
 
 /* 카테고리 삭제 */
-function deleteCategory() {
-  const index = this.id.split('_')[1];
-  const categoryName = document.getElementById(`categoryName_${index}`).value;
+function deleteCategory(categoryName) {
+  // const index = this.id.split('_')[1];
+  // const categoryName = document.getElementById(`categoryName_${index}`).value;
   // const categoryDelName = document.getElementById('categoryDelName').value
   const categoryData = {"name": categoryName};
   console.log(categoryData)
