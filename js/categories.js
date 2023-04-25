@@ -107,7 +107,7 @@ function updateCategory(index) {
 }
 
 /* 카테고리 삭제 */
-function deleteCategory(categoryName) {
+function deleteCategory(index) {
   const categoryName = document.getElementById(`categoryName_${index}`).value;
   const categoryData = {"name": categoryName};
   console.log(categoryData)
