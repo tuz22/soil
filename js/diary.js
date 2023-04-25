@@ -21,9 +21,9 @@ function diaryIndex() {
       "api_key" : api_key,
     },
     success: function(data) {
-      // console.log(JSON.stringify(data));
-
+      console.log(JSON.stringify(data));
       let diaryData = data.response.diaryList;
+      console.log(diaryData[0])
       let str = "";
       $.each(diaryData, function(i){
         str += "<table class='diary' onclick='goReadDiary()'>"

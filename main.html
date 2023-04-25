@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/default.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body onload="diaryIndex()">
   <!-- 일기 목록 -->
   <header>
     <h1 class="diary-logo"><a href=index.html>소비일기</a></h1>
@@ -35,7 +35,7 @@
     <div class="diary-table" id="tableDiary"></div>
   </section>
   <div class="add-btn-box">
-    <button onclick="diaryIndex()" class="add-btn off">더보기</button>
+    <button class="add-btn off">더보기</button>
   </div>
   <!-- 일기 조회 -->
   <div class="container diary-read off" id="tableDiary">
